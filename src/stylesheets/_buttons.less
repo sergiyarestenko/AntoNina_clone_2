@@ -1,0 +1,85 @@
+@import "_palette";
+@import "_variables";
+@import "_mixin";
+
+input.gt-btn {
+  display: none;
+}
+
+.gt-btn {
+  cursor: pointer;
+  display: flex;
+  .gt-transition();
+  padding: 0 15px;
+  align-items: center;
+  font-size: 16px;
+  font-style: normal;
+  justify-content: center;
+  font-weight: @light;
+}
+
+.gt-btn-wide {
+  padding: 0 30px;
+}
+
+.gt-btn-white {
+  color: @blue !important;
+  background: transparent;
+  border: 1px solid @btn-border;
+
+  &:hover {
+    background: @blue;
+    color: @white !important;
+  }
+}
+
+.gt-btn-whitest {
+  color: @white !important;
+  background: transparent;
+  border: 1px solid @white;
+
+  &:hover {
+    background: @blue;
+    color: @white !important;
+    border: 1px solid @blue;
+  }
+}
+
+.gt-btn-blue {
+  color: @white !important;
+  background: @blue;
+  border: 1px solid @blue;
+
+
+  &:hover {
+    color: @blue !important;
+    background: transparent;
+  }
+}
+
+.gt-btn-plane {
+  color: @grey-dark;
+  background: transparent;
+  border: none;
+
+  &:hover {
+    background: @blue;
+    color: @white;
+  }
+}
+
+.gt-btn-45 {
+  height: 45px;
+  line-height: 45px;
+}
+
+.gt-btn-30 {
+  height: 30px;
+  line-height: 30px;
+}
+
+.gt-btn-30-round {
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+}

@@ -1,0 +1,141 @@
+.test(@color:red) {
+  outline: 1px dotted red;
+}
+
+.gt-transition(@property: all, @duration: 0.5s, @function: ease-in-out) {
+  transition: @arguments;
+}
+
+.gt-transition-fast(@property: all, @duration: 0.25s, @function: linear) {
+  transition: @arguments;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.gt-placeholder(@color) {
+  &::-webkit-input-placeholder {
+    color: @color;
+    opacity: 1;
+    font-weight: @light;
+  }
+
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1;
+    font-weight: @light;
+
+  }
+
+  &:-ms-input-placeholder {
+    color: @color;
+    opacity: 1;
+  }
+
+  &:-moz-placeholder {
+    color: @color;
+    opacity: 1;
+    font-weight: @light;
+
+  }
+
+  &::placeholder {
+    color: @color;
+    opacity: 1;
+    font-weight: @light;
+
+  }
+}
+
+.gt-box-shadow (@x: 3px, @y: 3px, @blur: 10px, @alpha: .25) {
+  box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+.gt-scrollbar(@width:.5em) {
+  &::-webkit-scrollbar {
+    width: @width;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+}
+
+@-webkit-keyframes gt-link-move {
+  from,
+  to {
+    width: 100%;
+  }
+
+  50% {
+    width: 0;
+  }
+}
+
+@keyframes gt-link-move {
+  from,
+  to {
+    width: 100%;
+  }
+
+  50% {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes gt-view-card-show {
+  from {
+    opacity: 1;
+    margin: 0 0;
+    max-width: 0;
+  }
+
+  50% {
+    margin: 0 .2em;
+    max-width: 100%;
+    opacity: 1;
+  }
+  to {
+    margin: 0 .2em;
+    max-width: 100%;
+    opacity: 1;
+  }
+
+}
+
+@keyframes gt-view-card-show {
+  from {
+    opacity: 1;
+    margin: 0 0;
+    max-width: 0;
+  }
+
+  50% {
+    margin: 0 .2em;
+    max-width: 100%;
+    opacity: 1;
+  }
+  to {
+    margin: 0 .2em;
+    max-width: 100%;
+    opacity: 1;
+  }
+
+}
+

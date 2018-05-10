@@ -1,0 +1,142 @@
+@import "../../stylesheets/_palette";
+@import "../../stylesheets/_variables";
+@import "../../stylesheets/_mixin";
+
+.gt-one-new {
+  flex-direction: row;
+  min-height: 420px;
+  justify-content: space-between;
+  align-items: stretch;
+  > div {
+    flex-direction: column;
+  }
+  &-text {
+    width: 33%;
+    position: relative;
+    padding-right: 15px;
+    padding-bottom: 3em;
+    H2, p {
+
+      margin-top: auto;
+    }
+    h2 {
+      margin-bottom:1em;
+      font-size: 40px;
+      font-weight: @bold;
+      color: @black;
+      padding-top: 80px;
+      //padding-bottom: 2em;
+      position: relative;
+      background: url("../images/icons/logo-link-icon.svg") no-repeat 0 90%;
+      background-size: auto 3em;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -.2em;
+        height: 2px;
+        width: 1.5em;
+        background: @blue;
+      }
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    a {
+      position: absolute;
+      left: 0;
+      bottom: 1em;
+      font-size: 12px;
+      font-weight: @bold;
+      text-transform: uppercase;
+      color: @grey-dark;
+
+    }
+  }
+  &-img {
+    height: auto;
+    width: 67%;
+    text-align: center;
+    .gt-transition();
+    div {
+      height: 100%;
+    }
+    &:hover {
+      box-shadow: 5px 5px 25px rgba(0, 0, 0, .35);
+    }
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .gt-one-new {
+    min-height: 350px;
+    &-text {
+      h2 {
+        font-size: 36px;
+      }
+      p {
+        margin-top: 1em;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .gt-one-new {
+    min-height: 260px;
+    &-text {
+      h2 {
+        padding-top: 80px;
+        font-size: 36px;
+      }
+      p {
+        padding-bottom: 1em;
+      }
+
+      a {
+        bottom: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .gt-one-new {
+    min-height: 210px;
+    &-text {
+      h2 {
+        padding-top: 40px;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .gt-one-new {
+    flex-wrap: wrap;
+    &-text {
+      width: 100%;
+      h2 {
+        font-size: 30px;
+        background-size: auto 2.5em;
+      }
+      p {
+        font-size: 16px;
+        //padding-bottom: 60px;
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 250px;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+}
+
+@media screen and (max-width: 359px) {
+}

@@ -1,0 +1,51 @@
+@import "../../stylesheets/_palette";
+@import "../../stylesheets/_variables";
+@import "../../stylesheets/_mixin";
+
+.gt-breadcrumbs {
+  //position: absolute;
+  //left: 0;
+  //top: 80px;
+  //padding: 15px;
+  align-items: flex-start;
+  color: @white;
+  width: auto;
+  ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  }
+  a {
+    display: inline-flex;
+    padding-right: 1.2em;
+    position: relative;
+    color: @white;
+    &:after {
+      position: absolute;
+      cursor: default;
+      right: .25em;
+      bottom: .25em;
+      content: '';
+      height: .65em;
+      display: flex;
+      width: .65em;
+      background: url("../images/icons/arrow-right-white.svg") no-repeat 50% 50%;
+    }
+  }
+}
+
+.gt-top-plane {
+  .gt-breadcrumbs {
+
+    color: @grey-light;
+    a {
+
+      color:  @grey-light;
+      &:after {
+
+        background: url("../assets/images/icons/arrow-right-grey.svg") no-repeat 50% 50%;
+      }
+    }
+  }
+
+}

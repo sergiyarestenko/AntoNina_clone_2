@@ -1,0 +1,69 @@
+@import "../../stylesheets/_palette";
+@import "../../stylesheets/_variables";
+@import "../../stylesheets/_mixin";
+
+.gt-search {
+  &-button {
+    width: 1.2em;
+    height: 1.2em;
+    background: url("../images/icons/search-icon-white.svg") no-repeat 100% 0;
+    background-size: 1.1em 1.1em;
+  }
+  &-panel {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 20px;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    &-form {
+      width: 430px;
+      margin: auto;
+      position: relative;
+      input {
+        &[type = "text"] {
+          color: @white;
+          font-size: 20px;
+          font-weight: @light;
+          height: 25px;
+          border: solid @white;
+          border-width: 0 0 1px 0;
+          background: transparent;
+          width: 100%;
+          .gt-placeholder(@white-50);
+        }
+        &[type = "submit"] {
+          display: none;
+        }
+      }
+      label {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+      }
+    }
+    &-select {
+      width: 470px;
+      height: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 500;
+      form {
+        width: 100%;
+        height: 100%;
+      }
+      .select__gap,.select__list {
+        background-color: @white-90;
+      }
+      .select__list{
+        max-height: 350px;
+        overflow: auto;
+        .gt-scrollbar();
+      }
+      .select__item{
+        padding: .5em 1em;
+      }
+    }
+  }
+}

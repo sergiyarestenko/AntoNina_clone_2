@@ -1,0 +1,87 @@
+.gt-top-card {
+  height: 42px;
+  min-width: 42px;
+
+  background-color: @black-60;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border-radius: 21px;
+  margin: 5px 0 5px 10px;
+  color: @white;
+  font-weight: @light;
+  font-size: 22px;
+  line-height: 42px;
+  p {
+    margin: auto 0 auto 42px;
+    .gt-transition();
+    max-width: 0;
+    align-items: center;
+  }
+  span, i {
+    font-style: normal;
+    padding-left: .25em;
+  }
+  a{
+    padding-left: .5em;
+    color: @white;
+  }
+  //&:first-of-type {
+  //  margin-left: 15px;
+  //}
+  //&:last-of-type {
+  //  margin-right: 15px;
+  //}
+  &.gt-icon-pin {
+    background-image: url("../images/icons/pin-icon-white.svg");
+    background-position: 12px 45%;
+    background-size: auto 60%;
+    width: auto;
+    p{
+      margin: auto 15px auto 45px;
+      max-width: 500px;
+    }
+
+  }
+  &.gt-icon-visit {
+    background-image: url("../images/icons/visited-icon-white.svg");
+    background-position: 11px 50%;
+    background-size: auto 55%;
+  }
+  &.gt-icon-pin-plus {
+    background-image: url("../images/icons/pin-plus-icon-white.svg");
+    background-position: 11px 45%;
+    background-size: auto 60%;
+  }
+  &.gt-icon-share {
+    background-image: url("../images/icons/share-icon-white.svg");
+    background-position: 10px 50%;
+    background-size: auto 50%;
+  }
+  &.gt-icon-bookmarks {
+
+    background-image: url("../images/icons/boocmarks-icon-white.svg");
+    background-position:15px 50%;
+    background-size: auto 50%;
+  }
+  &.gt-active {
+    width: auto;
+    p {
+      margin: auto 15px auto 45px;
+      max-width: 500px;
+    }
+  }
+
+  &-wrapper {
+    width: 100%;
+    min-height: 80px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 5px;
+    padding-right: 15px;
+
+  }
+}

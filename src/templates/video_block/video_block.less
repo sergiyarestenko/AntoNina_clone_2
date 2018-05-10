@@ -1,0 +1,96 @@
+@import "../../stylesheets/_palette";
+@import "../../stylesheets/_variables";
+@import "../../stylesheets/_mixin";
+
+.gt-video {
+  height: 400px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 15;
+  &-inner {
+    width: 100%;
+  }
+  &-img {
+    width: 100%;
+  }
+  &-switch {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    background: url("../images/icons/mejs-controls.svg") no-repeat 0 -39px;
+    cursor: pointer;
+    bottom: ~"calc(50% - 40px)";
+    left: ~"calc(50% - 40px)";
+    opacity: 1;
+    .gt-loader {
+      display: none;
+    }
+    .gt-transition();
+    &:hover {
+      opacity: .65;
+    }
+    &.gt-bg-hide {
+      background: none;
+      &:hover {
+        opacity: 1;
+      }
+      .gt-loader {
+        display: flex;
+      }
+    }
+  }
+  &-text {
+    position: absolute;
+    width: 100%;
+    bottom: .5em;
+    top: auto;
+    left: 0;
+    color: @white;
+    z-index: 500;
+    .gt-transition();
+    p {
+      font-size: 20px;
+      font-weight: @bold;
+      padding-top: .25em;
+
+      span {
+        font-weight: @light;
+        font-size: 16px;
+
+      }
+    }
+    &.gt-video-is-playing {
+      bottom: 30px;
+    }
+  }
+  &-wrapper {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    width: 100%;
+  }
+  .mejs__mediaelement {
+    iframe {
+      max-width: 100%;
+    }
+  }
+  .mejs__controls {
+    //display: none;
+    position: absolute;
+    top: ~"calc(50% + 160px)";
+    left: 0;
+    z-index: 500;
+    .gt-transition;
+  }
+  .mejs__container-fullscreen {
+
+    .mejs__controls {
+      top: ~"calc(100% - 50px)";
+      width: ~"calc(100% - 150px)";
+
+    }
+  }
+}
