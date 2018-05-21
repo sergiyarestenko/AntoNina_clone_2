@@ -3,10 +3,6 @@
 @import "../../stylesheets/_mixin";
 
 .gt-breadcrumbs {
-  //position: absolute;
-  //left: 0;
-  //top: 80px;
-  //padding: 15px;
   align-items: flex-start;
   color: @white;
   width: auto;
@@ -36,16 +32,37 @@
 
 .gt-top-plane {
   .gt-breadcrumbs {
-
     color: @grey-light;
     a {
-
       color:  @grey-light;
       &:after {
 
-        background: url("../assets/images/icons/arrow-right-grey.svg") no-repeat 50% 50%;
+        background: url("../images/icons/arrow-right-grey.svg") no-repeat 50% 50%;
       }
     }
   }
+
+}
+
+@media screen and (max-width: 767px) {
+  .gt-breadcrumbs {
+    a{
+      padding-right: 2em;
+      margin-bottom: .5em;
+      margin-top: .5em;
+      &:after {
+        right: 1.2em;
+      }
+    }
+  }
+
+  }
+@media screen and (max-width: 479px) {
+.gt-breadcrumbs{
+  //padding-left: 15px;
+  //padding-right: 15px;
+  //font-size: 16px;
+  display: none;
+}
 
 }

@@ -82,9 +82,9 @@ select,
 textarea {
   font-family: @font-family-main;
 }
-//ol,ul{
-//  list-style: none;
-//}
+ol,ul{
+  list-style: none;
+}
 
 #gt-is-1024,
 #gt-is-1231,
@@ -148,58 +148,31 @@ footer {
 }
 
 .gt-img-holder {
-  //position: relative;
-  //background-position: center center;
-  //background-repeat: no-repeat;
-  //background-size: cover;
-  //.gt-transition(.15s);
-
-  //img {
-  //  height: 100%;
-  //  //width: auto;
-  //}
-
-  //&:after {
-  //  content: '';
-  //  position: absolute;
-  //  top: 0;
-  //  right: 0;
-  //  bottom: 0;
-  //  left: 0;
-  //}
-  &-abs {
     position: relative;
     overflow: hidden;
     height: 100%;
     width: 100%;
     img {
       position: absolute;
-      //opacity: 0;
-      //.gt-transition(opacity);
     }
-    &.gt-width {
-      img {
+    .gt-width {
+
         width: 100%;
         left: 0;
         top: 0;
-      }
+
     }
-    &.gt-height {
-      img {
+    .gt-height {
+
         height: 100%;
         max-width: none;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-      }
+
     }
-    //&.gt-visible{
-    //  img{
-    //    opacity: 1;
-    //  }
-    //
-    //}
-  }
+
+
 }
 
 .gt-img-left {

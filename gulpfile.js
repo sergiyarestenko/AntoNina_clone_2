@@ -17,7 +17,7 @@ const config = require('./gulpconfig.js'),
 
 gulp.task('css', function () {
     return gulp.src(config.paths.mainLess)
-        // .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(less())
         .on('error', function (err) {
             const type = err.type || '';
@@ -32,8 +32,8 @@ gulp.task('css', function () {
         })
         .pipe(autoprefixer())
         .pipe(cleancss({compatibility: 'ie8'}))
-        // .pipe(sourcemaps.write())
-        .pipe(gulp.dest(config.paths.build +'/assets/stylesheets'));
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(config.paths.build +'/stylesheets'));
 });
 
 gulp.task('js', function () {
@@ -42,12 +42,12 @@ gulp.task('js', function () {
         .pipe(rigger())
         .pipe(uglify())
         // .pipe(sourcemaps.write())
-        .pipe(gulp.dest(config.paths.build +'/assets/javascripts'))
+        .pipe(gulp.dest(config.paths.build +'/javascripts'))
 });
 gulp.task('jsLibs', function () {
     return gulp.src(config.paths.jsLibs)
         .pipe(uglify())
-        .pipe(gulp.dest(config.paths.build +'/assets/javascripts'))
+        .pipe(gulp.dest(config.paths.build +'/javascripts'))
 });
 
 
@@ -62,13 +62,13 @@ gulp.task('html', function () {
 gulp.task('img', function () {
     return gulp.src(config.paths.img)
         .pipe(imagemin())
-        .pipe(gulp.dest(config.paths.build +'/assets/images'))
+        .pipe(gulp.dest(config.paths.build +'/images'))
 });
 
 //img task
 gulp.task('fonts', function () {
     return gulp.src(config.paths.fonts)
-        .pipe(gulp.dest(config.paths.build +'/assets/fonts'))
+        .pipe(gulp.dest(config.paths.build +'/fonts'))
 });
 
 //server
@@ -97,5 +97,5 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('default', ['img', 'fonts' , 'js','css', 'jsLibs', 'html', 'serve', 'watch']);
-// gulp.task('default', [ 'css',  'js', 'jsLibs','html', 'serve', 'watch']);
+// gulp.task('default', ['img', 'fonts' , 'js','css', 'jsLibs', 'html', 'serve', 'watch']);
+gulp.task('default', [ 'css',  'js', 'jsLibs','html', 'serve', 'watch']);
