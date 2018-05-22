@@ -1,12 +1,26 @@
-this.imgHolderFunc = function (el) {
-    $(el).removeClass("gt-width");
-    $(el).removeClass("gt-height");
+this.imgLazyLoadFunc = function (el) {
+    var img = el.find('img');
+    img.Lazy({
+        placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
+        scrollDirection: 'vertical',
+        effect: 'fadeIn',
+        visibleOnly: true,
+        onError: function (element) {
+            console.log('error loading ' + element.data('src'));
+        },
+        afterLoad: function () {
+            self.setImgWidthHeightClass(el)
+        }
+    });
+};
+
+this.setImgWidthHeightClass = function (el) {
+    var img = el.find('img');
+    $(img).removeClass("gt-width");
+    $(img).removeClass("gt-height");
     var holderConst = el.outerHeight() / el.outerWidth(),
-        img = el.find('img'),
+
         imgConst = img.outerHeight() / img.outerWidth();
-
-
-
 
 
     if (imgConst > holderConst) {
@@ -16,33 +30,34 @@ this.imgHolderFunc = function (el) {
         $(img).addClass("gt-height");
     }
 
-
-
-
-
-
-    img.Lazy({
-        placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
-        scrollDirection: 'vertical',
-        effect: 'fadeIn',
-        visibleOnly: true,
-        onError: function (element) {
-            console.log('error loading ' + element.data('src'));
-        }
-    });
 };
+if ($("div").is(".gt-img-holder")) {
+    $(".gt-img-holder ").each(function () {
+        self.imgLazyLoadFunc($(this));
+    });
+    docWindow.resize(function () {
+        var resizeTimer;
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            $(".gt-img-holder ").each(function () {
+                self.setImgWidthHeightClass($(this));
+            });
+        },250);
+    });
+}
+
+// ---img-holder//\\--- bg-holder \\\///
+
+
+
 
 
 this.setBg = function (el) {
-
-
-
     var bg,
         currToken,
         newToken,
         resizeTimer;
     setBg();
-
     function setBg() {
         if (token667.is(":visible")) {
             bg = el.attr("data-src-phone");
@@ -54,10 +69,8 @@ this.setBg = function (el) {
             bg = el.attr("data-src-desctop");
             currToken = 2;
         }
-        el.css("background-image",  "url('../images/bgs/" + bg + "')");
-
+        el.css("background-image", "url('../images/bgs/" + bg + "')");
     }
-
     docWindow.resize(function () {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
@@ -77,37 +90,12 @@ this.setBg = function (el) {
 };
 
 
-// todo resize TimeOut;
 
 
 if ($('div').is('.gt-bgs-holder')) {
-
     $('.gt-bgs-holder').each(function () {
-
         self.setBg($(this));
     })
-
 }
-self.setBg($('#gt-footer'));
 
 
-
-
-    if ($("div").is(".gt-img-holder")) {
-        $(".gt-img-holder ").each(function () {
-            self.imgHolderFunc($(this));
-        });
-    }
-
-
-
-docWindow.resize(function () {
-
-    if ($("div").is(".gt-img-holder")) {
-        $(".gt-img-holder ").each(function () {
-            $(this).removeClass("gt-width");
-            $(this).removeClass("gt-height");
-            self.imgHolderFunc($(this));
-        });
-    }
-});
