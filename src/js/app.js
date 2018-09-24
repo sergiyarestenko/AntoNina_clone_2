@@ -3,7 +3,7 @@
 // предусмотреть выход из аккаунта
 
 
-GoToTrip = function () {
+var GoToTrip = function () {
 
     //= ./_vars
     //= ./_scroll-body

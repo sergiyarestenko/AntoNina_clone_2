@@ -17,7 +17,9 @@ module.exports = {
     mainJs: './src/js/app.js',
     img: './src/img/**/*.*',
     fonts: './src/fonts/**/*.*',
-    jsLibs:  './src/js/libs/**.js'
+    jsLibs:  './src/js/libs/**.js',
+    cssProd: 'D:/AntoNinaRubi/gototrip/app/assets/stylesheets',
+    jsProd: 'D:/AntoNinaRubi/gototrip/app/assets/javascripts'
 
   },
   browserSync: {

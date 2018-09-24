@@ -3,6 +3,9 @@
 @import "../../stylesheets/_mixin";
 
 .gt-collection {
+  &-wrapper{
+    padding-top: 10px !important;
+  }
   &-link {
     flex-direction: column;
     width: 75%;
@@ -10,9 +13,9 @@
     font-size: 14px;
     position: relative;
     background: @white;
-    .gt-box-shadow (7px, 7px, 15px, .03);
-    &-wrapper{
-      padding: .5em 0
+    .gt-box-shadow(7px, 7px, 15px, 0.03);
+    &-wrapper {
+      padding:7px 0;
     }
     &-img {
       position: relative;
@@ -57,9 +60,8 @@
         p {
           font-size: 20px;
           justify-content: center;
-          margin-top: .75em;
+          margin-top: 0.75em;
           margin-bottom: 0.5em;
-
         }
       }
       p {
@@ -73,14 +75,12 @@
       .gt-slider {
         &-container {
           height: 130px;
-
         }
         &-inner {
           height: 100%;
           overflow: hidden;
           padding-left: 2em;
           padding-right: 2em;
-
         }
         &-arrow {
           background-color: transparent;
@@ -93,7 +93,6 @@
           }
         }
       }
-
     }
     &-number {
       @size: 90px;
@@ -103,7 +102,7 @@
       width: @size;
       position: absolute;
       left: 0;
-      bottom: -50px;
+      bottom: -40px;
       justify-content: center;
       align-items: center;
       font-size: 40px;
@@ -116,7 +115,7 @@
   }
   &-text {
     position: absolute;
-    top: 20px;
+    top: 10px;
     width: 33%;
     height: ~"calc(100% - 50px)";
     flex-direction: column;
@@ -155,21 +154,20 @@
       font-weight: @light;
     }
     &:before {
-      content: url('../images/icons/logo-link-icon.svg');
+      content: url("../images/icons/logo-link-icon.svg");
       position: absolute;
-      top: -110px;
-      right: 15px;
+      top: -120px;
+      right: 0;
       width: 250px;
       height: auto;
-      opacity: .5;
-
+      opacity: 0.5;
     }
   }
   &-white {
     position: relative;
     .gt-img-holder {
-      margin-top: 50px;
-      height: 550px;
+      margin-top: 40px;
+      height: 515px;
       width: 67%;
     }
 
@@ -177,27 +175,25 @@
       right: 0;
       background-color: @white;
       color: @grey-dark;
-      .gt-box-shadow (7px, 7px, 15px, .03) ;
+      .gt-box-shadow(7px, 7px, 15px, 0.03);
     }
     &:before {
-      content: 'GOtoTRIP';
+      content: "GOtoTRIP";
       color: @grey-lightest;
-      font-size: 200px;
+      font-size: 190px;
       font-weight: @bold;
       position: absolute;
-      top: -83px;
-      left: 15px;
+      top: -100px;
+      left: -5px;
       //width: 250px;
       //height: auto;
-      opacity: .5;
-
+      opacity: 0.5;
     }
   }
 
   &-before-logo {
     position: relative;
-
   }
-  &-before-text {
-  }
+  // &-before-text {
+  // }
 }

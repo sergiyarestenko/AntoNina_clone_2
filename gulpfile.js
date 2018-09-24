@@ -12,7 +12,8 @@ const config = require('./gulpconfig.js'),
     imagemin = require('gulp-imagemin'),
     connect = require('gulp-connect'),
     gutil = require('gulp-util'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    logger = require('logger').createLogger();
 
 
 gulp.task('css', function () {
@@ -31,18 +32,19 @@ gulp.task('css', function () {
             this.emit('end');
         })
         .pipe(autoprefixer())
-        .pipe(cleancss({compatibility: 'ie8'}))
+        // .pipe(cleancss({compatibility: 'ie8'}))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(config.paths.build +'/stylesheets'));
+        .pipe(gulp.dest(config.paths.build +'/stylesheets'))
+        .pipe(gulp.dest(config.paths.cssProd))
 });
 
 gulp.task('js', function () {
     return gulp.src(config.paths.mainJs)
-        // .pipe(sourcemaps.init())
         .pipe(rigger())
-        .pipe(uglify())
-        // .pipe(sourcemaps.write())
+        // .pipe(uglify())
         .pipe(gulp.dest(config.paths.build +'/javascripts'))
+        .pipe(gulp.dest(config.paths.jsProd))
+
 });
 gulp.task('jsLibs', function () {
     return gulp.src(config.paths.jsLibs)
@@ -55,6 +57,9 @@ gulp.task('jsLibs', function () {
 gulp.task('html', function () {
     return gulp.src(config.paths.mainHtml)
         .pipe(rigger())
+        .on('error',function(error){
+logger.error(error);
+        })
         .pipe(gulp.dest(config.paths.build))
 });
 
@@ -97,5 +102,5 @@ gulp.task('watch', function () {
 });
 
 
-// gulp.task('default', ['img', 'fonts' , 'js','css', 'jsLibs', 'html', 'serve', 'watch']);
-gulp.task('default', [ 'css',  'js', 'jsLibs','html', 'serve', 'watch']);
+gulp.task('default', ['img', 'fonts' , 'js','css', 'jsLibs', 'html', 'serve', 'watch']);
+// gulp.task('default', [ 'css',  'js', 'jsLibs','html', 'serve', 'watch']);

@@ -3,16 +3,15 @@
 @import "_mixin";
 
 .gt-inner-scroll {
-
   padding-right: 15px;
-
 }
-.gt-inner-scroll-text{
+.gt-inner-scroll-text {
   flex-direction: column;
 }
 
 .gt-scroll-cursor {
-  &:after, &:before {
+  &:after,
+  &:before {
     content: "";
     position: absolute;
     width: 6px;
@@ -20,7 +19,7 @@
     left: 50%;
     transform: translateX(-50%);
     height: 60%;
-    background: #CECECE;
+    background: #cecece;
   }
   &:before {
     top: 0;
@@ -28,6 +27,4 @@
   &:after {
     bottom: 0;
   }
-
 }
-

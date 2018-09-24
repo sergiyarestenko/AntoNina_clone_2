@@ -9,7 +9,7 @@
   line-height: 1.5em;
 
   h2 {
-    font-size:  16px;
+    font-size: 16px;
     font-weight: @normal;
     color: @black;
     border-bottom: 2px solid @grey-article-border;
@@ -29,8 +29,7 @@
   > img {
     width: 100%;
     height: auto;
-    margin: .5em auto;
-
+    margin: 0.5em auto;
   }
   &-header {
     flex-direction: column;
@@ -43,12 +42,12 @@
       flex-direction: row;
       justify-content: space-between;
       font-size: 14px;
-      margin: .5em 0;
+      margin: 0.5em 0;
       i {
-        margin: 0 .5em 0 2em;
+        margin: 0 0.5em 0 2em;
       }
-      a{
-        color:@blue;
+      a {
+        color: @blue;
       }
     }
   }
@@ -64,10 +63,10 @@
     padding: 0 30px 0 15px;
     width: 75%;
     flex-direction: column;
-    &-option{
+    &-option {
       width: 66.6666%;
     }
-    &-half{
+    &-half {
       width: 50%;
       margin-left: 25%;
       padding: 0 30px 0 15px;
@@ -76,25 +75,23 @@
 
   &-panel,
   &-table {
-    font-size:  16px;
+    font-size: 16px;
     color: @black;
     flex-direction: column;
     width: 100%;
     height: auto;
     align-self: flex-start;
     padding: 30px;
-    box-shadow:2px 2px 6px rgba(0, 0, 0, .1);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     .gt-box-shadow();
     &-header {
-
       text-transform: uppercase;
       color: @grey-dark;
       line-height: 1.5em;
-      padding: .1em 0 .1em 10px;
+      padding: 0.1em 0 0.1em 10px;
       margin-bottom: 1em;
       border-left: 10px solid @blue;
-      font-size:  16px;
-
+      font-size: 16px;
     }
     &-wrapper {
       width: 25%;
@@ -103,7 +100,7 @@
       position: absolute;
       top: 0;
       right: 15px;
-      &-option{
+      &-option {
         width: 33.3333%;
         padding-left: 0;
       }
@@ -126,20 +123,21 @@
         flex-direction: column;
       }
 
-      &-left{
+      &-left {
         right: auto;
         left: 15px;
         padding-right: 15px;
         &.gt-fixed {
           &-bottom {
             right: auto;
-            left:  15px !important;
+            left: 15px !important;
           }
         }
       }
     }
 
-    a,div {
+    a,
+    div {
       cursor: pointer;
       color: @black;
       padding: 10px 0;
@@ -151,11 +149,11 @@
     }
     &-back-link {
       &:before {
-        content: '<';
+        content: "<";
         font-size: 2em;
         line-height: 0.65em;
         padding-right: 0.15em;
-        transform: scaleX(.5);
+        transform: scaleX(0.5);
       }
     }
   }
@@ -172,7 +170,7 @@
           line-height: 2em;
           i {
             line-height: 1.8em;
-            padding: 0 .5em 0 2em;
+            padding: 0 0.5em 0 2em;
           }
         }
         &-header {
@@ -185,7 +183,7 @@
           .header {
             font-weight: @bold;
             color: @black;
-            padding: .5em 0;
+            padding: 0.5em 0;
           }
           .text {
             line-height: 1.5;
@@ -238,7 +236,8 @@
       background-size: cover;
     }
   }
-  &-three-column, &-two-column {
+  &-three-column,
+  &-two-column {
     &-inner {
       display: block;
       width: 100%;
@@ -265,6 +264,4 @@
       column-count: 2;
     }
   }
-
 }
-

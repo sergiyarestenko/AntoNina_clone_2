@@ -5,14 +5,15 @@
 .gt-action-menu {
   flex-direction: row;
   svg {
-
     width: 50%;
     height: auto;
   }
+
   path {
     fill: @blue;
     .gt-transition();
   }
+
   .gt-icon-holder {
     justify-content: center;
     align-items: center;
@@ -23,6 +24,7 @@
       }
     }
   }
+
   &-inner {
     width: 33.3%;
     flex-direction: row;
@@ -36,6 +38,7 @@
     background: url("../images/main-bg-1.png") no-repeat 0 0;
     background-size: contain;
   }
+
   .gt-icon-holder {
     position: absolute;
     left: 0;
@@ -48,12 +51,12 @@
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-
     .gt-transition();
+
     span {
       position: absolute;
-      top: .25em;
-      right: -.5em;
+      top: 0.25em;
+      right: -0.5em;
       font-weight: @normal;
       color: @white;
       font-size: 14px;
@@ -63,33 +66,38 @@
       background: @blue;
       border-radius: 50%;
       text-align: center;
-      padding-top: .35em;
+      padding-top: 0.35em;
       .gt-transition();
       box-shadow: 1px 0 5px rgba(0, 0, 0, 0);
     }
+
     &:hover {
       border-color: @blue;
       background-color: @blue;
       span {
         color: @blue;
         background: @white;
-        box-shadow: 1px 0 5px rgba(0, 0, 0, .25);
+        box-shadow: 1px 0 5px rgba(0, 0, 0, 0.25);
       }
+
       path {
         fill: @white;
       }
     }
   }
+
   .gt-text-holder {
     flex-direction: column;
     padding: 0 15px;
     width: 100%;
+
     p {
       &:first-of-type {
         color: @grey-dark;
         font-size: 16px;
         font-weight: @bold;
       }
+
       &.gt-text-inner {
         font-size: 14px;
         font-weight: @normal;
@@ -109,14 +117,17 @@
       padding-right: 20%;
       flex-shrink: 1;
     }
+
     &-inner {
       position: relative;
       padding-top: 120px;
       width: 33%;
       font-size: 14px;
+
       .gt-icon-holder {
         top: 0;
       }
+
       p {
         color: @black;
         padding-right: 15px;
@@ -128,20 +139,25 @@
 @media screen and (max-width: 1230px) {
   .gt-action-menu {
     flex-wrap: wrap;
+
     &-main-page {
       height: 350px;
     }
+
     &-column {
       width: 100%;
+
       p {
         font-size: 16px;
         padding-right: 0;
         margin-bottom: 30px;
       }
+
       &-inner {
         .gt-icon-holder {
           left: ~"calc(50% - 45px)";
         }
+
         p {
           justify-content: center;
           margin-left: 15px;
@@ -150,9 +166,9 @@
         }
       }
     }
+
     &-inner {
       padding-right: 30px;
-
     }
 
     .gt-text-holder {
@@ -180,10 +196,12 @@
       &:nth-child(2) {
         justify-content: center;
       }
+
       &:last-of-type {
         justify-content: flex-end;
       }
     }
+
     .gt-icon-holder {
       position: relative;
       left: auto;
@@ -197,6 +215,7 @@
         line-height: 27px;
       }
     }
+
     .gt-text-holder {
       display: none;
     }
@@ -207,14 +226,17 @@
         padding-right: 0;
         margin-bottom: 30px;
       }
+
       &-inner {
         padding-top: 165px;
         flex-direction: column;
+
         .gt-icon-holder {
           position: absolute;
           top: 0;
           left: ~"calc(50% - 70px)";
         }
+
         p {
           font-size: 14px;
 
@@ -224,8 +246,6 @@
     }
   }
 }
-
-
 
 @media screen and (max-width: 767px) {
   .gt-action-menu {
@@ -240,15 +260,19 @@
     &-main-page {
       height: 330px;
     }
+
     &-two-columns {
       height: auto;
     }
+
     &-inner {
       padding-top: 45px;
     }
+
     .gt-icon-holder {
       height: 110px;
       width: 110px;
+
       span {
         font-size: 15px;
         width: 28px;
@@ -256,20 +280,24 @@
         line-height: 20px;
       }
     }
+
     &-column {
       p {
         font-size: 15px;
         margin-bottom: 1em;
       }
+
       &-inner {
         padding-top: 125px;
+
         .gt-icon-holder {
           left: ~"calc(50% - 55px)";
         }
+
         p {
           font-size: 13px;
-          margin-left: .5em;
-          margin-right: .5em;
+          margin-left: 0.5em;
+          margin-right: 0.5em;
         }
       }
     }
@@ -280,18 +308,23 @@
   .gt-action-menu {
     padding-left: 15px;
     padding-right: 15px;
+
     &-main-page {
       height: 350px;
     }
+
     &-two-columns {
       height: auto;
     }
+
     &-inner {
       padding-top: 30px;
     }
+
     .gt-icon-holder {
       height: 65px;
       width: 65px;
+
       span {
         font-size: 12px;
         width: 20px;
@@ -299,8 +332,10 @@
         line-height: 15px;
       }
     }
+
     &-column {
       flex-direction: column;
+
       &-inner {
         position: static;
         flex-direction: row;
@@ -308,16 +343,16 @@
         align-items: center;
         width: 100%;
         font-size: 14px;
+
         .gt-icon-holder {
           position: static !important;
         }
+
         p {
           text-align: left;
           margin-left: 15px;
         }
       }
-
     }
   }
 }
-

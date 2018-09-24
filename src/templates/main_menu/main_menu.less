@@ -295,7 +295,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      padding: .5em 1.5em;
+      padding: .5em 1.5em 120px 1.5em;
       opacity: 0;
       flex-direction: column;
       width: 100%;
@@ -312,14 +312,33 @@
         width: 100%;
         margin: .5em 0;
         height: 30px;
-        &.gt-header-enter-form-submit {
-          height: 35px;
-          margin-top: 1em;
-          label {
-            width: 80%;
-          }
+        
+      }
+      .gt-header-enter-form-submit {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 120px;
+        margin-top: 1em;
+        flex-direction: column;
+
+        .test;
+        label,a{
+          margin-left: auto;
+          margin-right: auto;
+        }
+        label {
+         
+          width: 80%;
+        height: 35px;
         }
       }
+        .gt-enter-form-remember-pass {
+          border-bottom: 1px @white dashed;
+        }
+
+
+
       .gt-input-wrapper {
         border: 1px solid @white-50;
         input {
@@ -327,45 +346,44 @@
           font-size: 12px;
         }
       }
-      &-inner {
-        flex-direction: column;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+      // &-inner {
+      //   flex-direction: column;
+      //   margin-top: 0 !important;
+      //   margin-bottom: 0 !important;
+      //   .test();
 
-        div {
-          margin: 0 auto;
-          width: 80%;
-          height: 30px;
-          font-size: 12px;
-          justify-content: flex-start;
+      //   div {
+      //     margin: 0 auto;
+      //     width: 80%;
+      //     height: 30px;
+      //     font-size: 12px;
+      //     justify-content: flex-start;
 
-          label {
-            width: 100%;
+      //     label {
+      //       width: 100%;
 
-          }
-          .gt-enter-form-remember-me {
-            display: none;
-            & + label {
-              margin: auto 0;
-              padding-left: 20px;
-              background: url("../../images/icons/checkbox-icon-white.png") no-repeat 0 50%;
-              background-size: auto 90%;
-              .gt-transition();
-            }
-            &:checked + label {
-              background-image: url("../../images/icons/checkbox-selected-icon-white.png");
-            }
-          }
-          &.gt-header-enter-form-submit {
-            height: 35px;
-            margin-top: .5em;
-            margin-bottom: .5em;
-          }
-        }
-        .gt-enter-form-remember-pass {
-          border-bottom: 1px @white dashed;
-        }
-      }
+      //     }
+      //     .gt-enter-form-remember-me {
+      //       display: none;
+      //       & + label {
+      //         margin: auto 0;
+      //         padding-left: 20px;
+      //         background: url("../../images/icons/checkbox-icon-white.png") no-repeat 0 50%;
+      //         background-size: auto 90%;
+      //         .gt-transition();
+      //       }
+      //       &:checked + label {
+      //         background-image: url("../../images/icons/checkbox-selected-icon-white.png");
+      //       }
+      //     }
+      //     &.gt-header-enter-form-submit {
+      //       height: 35px;
+      //       margin-top: .5em;
+      //       margin-bottom: .5em;
+      //     }
+      //   }
+
+      // }
       &-text {
         justify-content: center;
         span,a {

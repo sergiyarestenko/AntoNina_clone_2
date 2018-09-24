@@ -8,13 +8,9 @@ this.cutNews = function (el) {
     parent.children().each(function () {
         maxHeight -= $(this).outerHeight(true);
     });
-
     maxHeight = maxHeight + el.height() - 20;
-
-
     cuttingEl.each(function () {
         currHeight = $(this).outerHeight(true);
-
         if (currHeight < maxHeight) {
             maxHeight -= currHeight
         } else {
@@ -39,31 +35,23 @@ this.cutNews = function (el) {
     //         setTimeout(cutLastSymbol)
     //     }
     // }
-
 };
-
-
 if ($("div").is(".js-news-cut")) {
     $(".js-news-cut").each(function () {
         self.cutNews($(this));
     });
-
-
     docWindow.resize(function () {
         $(".js-news-cut").each(function () {
             self.cutNews($(this));
         });
     });
 }
-
-
 this.cutReadMoreSlider = function () {
     var cuttings = $(".gt-read-more-slider-text-inner");
     cuttings.each(function () {
         self.cutting($(this), 160);
     });
 };
-
 this.cutting = function (el, num) {
     var newsText = el.text();
     if (newsText.length > num) {
@@ -71,8 +59,6 @@ this.cutting = function (el, num) {
         el.text(newsText);
     }
 };
-
-
 if ($("p").is(".gt-read-more-slider-text-inner")) {
     self.cutReadMoreSlider();
 }

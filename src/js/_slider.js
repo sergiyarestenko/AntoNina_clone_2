@@ -298,19 +298,3 @@ if ($("div").is(".gt-slider")) {
         self.createSlider($(this));
     })
 }
-
-
-this.numberCollectionArticle = function (el) {
-    el.find(".gt-collection-link-wrapper").each(function () {
-        $(this).find('.gt-collection-link-slider-wrapper').after('<div class = "gt-collection-link-number"><span>' + ($(this).index() + 1) + '</span></div>')
-        // console.log($(this));
-    });
-};
-
-
-
-if ($("div").is(".gt-collection-wrapper-num")) {
-    $(".gt-collection-wrapper-num").each(function () {
-        self.numberCollectionArticle($(this));
-    });
-}

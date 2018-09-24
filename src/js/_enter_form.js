@@ -7,7 +7,6 @@ this.openEnterForm = function () {
         enterClose.addClass('gt-open');
     }
 };
-
 this.closeEnterForm = function () {
     enterClose.removeClass('gt-open');
     enterForm.removeClass('gt-open');
@@ -18,29 +17,21 @@ this.closeEnterForm = function () {
         enterWrapper.removeClass('gt-open');
     }
 };
-
 this.changeEnterRegistration = function (event) {
     if (enterForm.hasClass($(event.target).attr("class")))
         return;
     enterForm.removeClass("gt-chosen-enter").removeClass("gt-chosen-registration").addClass($(event.target).attr("class"));
 };
-
-
 this.openRestorePass = function () {
     $('#gt-enter-pass-restore-wrapper').addClass('gt-open')
-
 };
 this.closeRestorePass = function () {
     $('#gt-enter-pass-restore-wrapper').removeClass('gt-open')
 };
-
-
 enterButton.each(function () {
     $(this).on('click', self.openEnterForm)
 });
-
 enterClose.on('click', self.closeEnterForm);
-
 enterChose.on('click', function (event) {
     self.changeEnterRegistration(event);
 });

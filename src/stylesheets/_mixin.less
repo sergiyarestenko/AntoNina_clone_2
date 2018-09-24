@@ -35,7 +35,6 @@
     color: @color;
     opacity: 1;
     font-weight: @light;
-
   }
 
   &:-ms-input-placeholder {
@@ -47,22 +46,20 @@
     color: @color;
     opacity: 1;
     font-weight: @light;
-
   }
 
   &::placeholder {
     color: @color;
     opacity: 1;
     font-weight: @light;
-
   }
 }
 
-.gt-box-shadow (@x: 3px, @y: 3px, @blur: 10px, @alpha: .25) {
+.gt-box-shadow (@x: 3px, @y: 3px, @blur: 10px, @alpha: 0.25) {
   box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
 }
 
-.gt-scrollbar(@width:.5em) {
+.gt-scrollbar(@width:0.5em) {
   &::-webkit-scrollbar {
     width: @width;
   }
@@ -107,16 +104,15 @@
   }
 
   50% {
-    margin: 0 .2em;
+    margin: 0 0.2em;
     max-width: 100%;
     opacity: 1;
   }
   to {
-    margin: 0 .2em;
+    margin: 0 0.2em;
     max-width: 100%;
     opacity: 1;
   }
-
 }
 
 @keyframes gt-view-card-show {
@@ -127,15 +123,13 @@
   }
 
   50% {
-    margin: 0 .2em;
+    margin: 0 0.2em;
     max-width: 100%;
     opacity: 1;
   }
   to {
-    margin: 0 .2em;
+    margin: 0 0.2em;
     max-width: 100%;
     opacity: 1;
   }
-
 }
-

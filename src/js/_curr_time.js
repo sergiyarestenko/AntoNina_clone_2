@@ -2,9 +2,6 @@ this.setCurrTime = function () {
     self.currTime();
     var t = setInterval(self.currTime, 30000);
 };
-
-
-
 this.currTime = function () {
     $(".gt-curr-time").each(function () {
         var date = new Date();
@@ -50,8 +47,6 @@ this.currTime = function () {
             );
     });
 };
-
-
 if ($("div").is(".gt-curr-time")) {
     self.setCurrTime();
 }

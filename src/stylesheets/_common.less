@@ -42,7 +42,7 @@ a,
 a:active,
 a:focus,
 a:hover,
-a:visited{
+a:visited {
   display: inline-flex;
   text-decoration: none;
   outline: none;
@@ -81,8 +81,10 @@ input,
 select,
 textarea {
   font-family: @font-family-main;
+  outline: none !important;
 }
-ol,ul{
+ol,
+ul {
   list-style: none;
 }
 
@@ -143,46 +145,40 @@ footer {
   color: @white;
 }
 
-.gt-column{
+.gt-column {
   flex-direction: column;
 }
 
 .gt-img-holder {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  img {
+    position: absolute;
+  }
+  .gt-width {
     width: 100%;
-    img {
-      position: absolute;
-    }
-    .gt-width {
-
-        width: 100%;
-        left: 0;
-        top: 0;
-
-    }
-    .gt-height {
-
-        height: 100%;
-        max-width: none;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-
-    }
-
-
+    left: 0;
+    top: 0;
+  }
+  .gt-height {
+    height: 100%;
+    max-width: none;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .gt-img-left {
   float: left;
-  margin: .5em 1em .5em 0;
+  margin: 0.5em 1em 0.5em 0;
 }
 
 .gt-img-right {
   float: right;
-  margin: .5em 0 .5em 1em;
+  margin: 0.5em 0 0.5em 1em;
 }
 
 .gt-text-block {
@@ -211,13 +207,14 @@ footer {
 }
 
 .gt-box-shadow {
-  box-shadow: 5px 5px 12px rgba(0, 0, 0, .1);
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
 }
 
 .gt-shadow-70 {
-
-  &:before,&:after {
-    content: '';
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -225,15 +222,23 @@ footer {
     left: 0;
     z-index: 10;
   }
-  &:after{
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .25) 25%, rgba(0, 0, 0, 0) 100%);
-
+  &:after {
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.25) 25%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 }
 
 .gt-shadow-70-reverse-100px {
   &:after {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 0, rgba(0, 0, 0, 0) 100px);
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0,
+      rgba(0, 0, 0, 0) 100px
+    );
     z-index: 10;
     bottom: auto;
     height: 100px;
@@ -242,14 +247,22 @@ footer {
 }
 .gt-shadow-70-reverse-100px-both {
   &:after {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 0, rgba(0, 0, 0, 0) 100%);
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0,
+      rgba(0, 0, 0, 0) 100%
+    );
     z-index: 10;
     bottom: auto;
     height: 100px;
     width: auto;
   }
   &:before {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, 0) 100%);
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.5) 0,
+      rgba(0, 0, 0, 0) 100%
+    );
     z-index: 10;
     top: auto;
     height: 60px;
@@ -258,14 +271,22 @@ footer {
 }
 .gt-shadow-80-100-300-both {
   &:after {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 0, rgba(0, 0, 0, 0) 100%);
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0,
+      rgba(0, 0, 0, 0) 100%
+    );
     z-index: 10;
     bottom: auto;
     height: 100px;
     width: auto;
   }
   &:before {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .8) 0, rgba(0, 0, 0, 0) 100%);
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 100%
+    );
     z-index: 10;
     top: auto;
     height: 300px;
@@ -275,19 +296,24 @@ footer {
 
 .gt-shadow-100 {
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .35) 25%, rgba(0, 0, 0, 0) 100%);
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.35) 25%,
+      rgba(0, 0, 0, 0) 100%
+    );
     z-index: 10;
   }
 }
 .gt-shadow-hover {
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -297,13 +323,12 @@ footer {
     z-index: 10;
     .gt-transition();
   }
-  &:hover{
-    &:after{
+  &:hover {
+    &:after {
       background-color: @black-20;
     }
   }
 }
-
 
 .gt-up {
   color: @white;
@@ -314,7 +339,8 @@ footer {
   width: 40px;
   border: 1px solid @btn-border;
   border-radius: 50%;
-  background: @body-bg url("../images/icons/arrow-top-blue.svg") no-repeat 50% 50%;
+  background: @body-bg url("../images/icons/arrow-top-blue.svg") no-repeat 50%
+    50%;
   background-size: 50% auto;
   z-index: 99;
   opacity: 0;
@@ -333,8 +359,9 @@ footer {
       position: absolute;
       left: -40px;
       top: -5px;
-      content: '';
-      background: @white url("../images/icons/arrow-top-blue.svg") no-repeat 50% 45%;
+      content: "";
+      background: @white url("../images/icons/arrow-top-blue.svg") no-repeat 50%
+        45%;
       background-size: 50% auto;
       width: 30px;
       height: 30px;
@@ -348,7 +375,8 @@ footer {
     visibility: visible;
 
     &:hover {
-      background: @blue url("../images/icons/arrow-top-white.svg") no-repeat 50% 50%;
+      background: @blue url("../images/icons/arrow-top-white.svg") no-repeat 50%
+        50%;
       background-size: 50% auto;
       border-color: @blue;
       opacity: 1;
@@ -361,7 +389,7 @@ footer {
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     //bottom: -2px;
@@ -370,8 +398,7 @@ footer {
     width: 100%;
     background: @blue;
   }
-  &-animation{
-
+  &-animation {
     &:hover {
       &:after {
         -webkit-animation-name: gt-link-move;
@@ -381,9 +408,7 @@ footer {
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
       }
-
     }
-
   }
 }
 
@@ -426,8 +451,7 @@ footer {
   }
 }
 
-
-.gt-switch{
+.gt-switch {
   position: relative;
   align-content: center;
   justify-content: right;
@@ -452,7 +476,8 @@ footer {
       top: 100%;
     }
   }
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     .line-1 {
       transform: translateY(1px);
     }
@@ -471,9 +496,9 @@ footer {
       transform: translateY(-9px) translateX(-2px) rotate(-45deg);
     }
   }
-  &-main{
+  &-main {
     height: 24px;
-    width:50px;
+    width: 50px;
     .line {
       width: 48px;
     }
@@ -489,17 +514,15 @@ footer {
       }
     }
   }
-
 }
-.gt-video-label{
-&:before{
-  content: 'Видео';
-  color: @white;
-  background-color: @red;
-  text-transform: uppercase;
-  font-size: 11px;
-  padding: .15em 1em .1em;
-  font-weight: @light;
-
-}
+.gt-video-label {
+  &:before {
+    content: "Видео";
+    color: @white;
+    background-color: @red;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 0.15em 1em 0.1em;
+    font-weight: @light;
+  }
 }
