@@ -4,7 +4,8 @@
 
 
 var GoToTrip = function () {
-
+    //= jquery-ui
+    ;
     //= ./_vars
     //= ./_scroll-body
 
@@ -40,13 +41,13 @@ var GoToTrip = function () {
 
 
     //= ./_footer_height
-/////////////////////does not work
+    /////////////////////does not work
 
     //= ./_place_cards
     //= ./_social_enter
-   //=  ./_cut_news
+    //=  ./_cut_news
 
-///////////////////////////////
+    ///////////////////////////////
 
     //= ./_doc_scroll_listeners
 

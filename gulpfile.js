@@ -102,5 +102,5 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('default', ['img', 'fonts' , 'js','css', 'jsLibs', 'html', 'serve', 'watch']);
-// gulp.task('default', [ 'css',  'js', 'jsLibs','html', 'serve', 'watch']);
+// gulp.task('default', ['img', 'fonts' , 'js','css', 'jsLibs', 'html', 'serve', 'watch']);
+gulp.task('default', [ 'css',  'js', 'jsLibs','html', 'serve', 'watch']);
