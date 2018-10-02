@@ -7,6 +7,7 @@ this.openEnterForm = function () {
         enterClose.addClass('gt-open');
     }
 };
+
 this.closeEnterForm = function () {
     enterClose.removeClass('gt-open');
     enterForm.removeClass('gt-open');
