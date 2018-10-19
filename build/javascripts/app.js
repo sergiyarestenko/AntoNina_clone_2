@@ -32,12 +32,13 @@ var GoToTrip = function () {
         token768 = $("#gt-is-768"),
         token1024 = $("#gt-is-1024"),
         token1231 = $("#gt-is-1231"),
-        gtHeader = $("header"),
+        gtHeader = $("#header"),
         gtFooter = $("footer"),
         gtWrapper = $("#gt-wrapper"),
         upButton = $("#gt-up"),
         mobileMenuSwitch = $("#gt-mobile-menu-switch"),
-        enterButton = $('.gt-enter'),
+        enterButton = $('#gt-enter'),
+        headerUser = $('#gt-header-user'),
         enterWrapper = $('#gt-header-enter-wrapper'),
         enterForm = $('#gt-header-enter'),
         enterChose = $('#gt-header-enter-chose'),
@@ -73,28 +74,47 @@ var GoToTrip = function () {
     };
 
 
-    this.deskTopMenuScroll = function () {
-        if (docWindow.scrollTop() > gtHeader.outerHeight()) {
-            gtHeader.addClass("gt-header-scrolled");
-        } else {
-            gtHeader.removeClass("gt-header-scrolled");
-        }
-    };
-    
-    
-    if ($("*").is(".gt-top-plane")) {
-        $('.gt-header').addClass('gt-header-plane-top')
-    };
-    
-    
-    
-    self.deskTopMenuScroll();//_desctop_header_func.js
-    
-    docWindow.resize(function () {
-        self.deskTopMenuScroll();
-        if (gtHeader.hasClass("gt-open")) self.mobileMenuClose();
-    
+   
+    enterButton.on('click', function () {
+        self.toggleHeaderUser();
     })
+    
+    $('#gt-header-to-main-menu').on('click', function () {
+        self.closeHeaderUser()
+    });
+    
+    this.toggleHeaderUser = function () {
+        if (gtHeader.hasClass('gt-user-open')) {
+            self.closeHeaderUser();
+        } else {
+            self.openHeaderUser();
+        }
+    }
+    
+    
+    
+    
+    this.openHeaderUser = function () {
+        gtHeader.addClass('gt-user-open');
+        // body.on('click', function (e) {
+        //     var target = e.target;
+        //     console.log(target)
+        //     if (target.is(enterButton) || target.is(headerUser)) {
+        //         console.log('is');
+        //         return;
+        //     } else {
+        //          console.log('closeHeaderUser');
+        //         self.closeHeaderUser();
+        //     }
+        // })
+    
+    }
+    
+    this.closeHeaderUser = function () {
+        gtHeader.removeClass('gt-user-open')
+    }
+
+
 
     
     this.mobileMenuClose = function () {
@@ -108,8 +128,6 @@ var GoToTrip = function () {
         gtHeader.addClass("gt-open");
         mobileMenuSwitch.addClass("gt-open");
     };
-    
-    
     
     mobileMenuSwitch.on("click", function () {
         if ($(this).hasClass("gt-open")) {
@@ -149,9 +167,9 @@ var GoToTrip = function () {
     this.closeRestorePass = function () {
         $('#gt-enter-pass-restore-wrapper').removeClass('gt-open')
     };
-    enterButton.each(function () {
-        $(this).on('click', self.openEnterForm)
-    });
+    // enterButton.each(function () {
+    //     $(this).on('click', self.openEnterForm)
+    // });
     enterClose.on('click', self.closeEnterForm);
     enterChose.on('click', function (event) {
         self.changeEnterRegistration(event);
@@ -177,6 +195,7 @@ var GoToTrip = function () {
     };
     
     this.setImgWidthHeightClass = function (el) {
+    
         var img = el.find('img');
         $(img).removeClass("gt-width");
         $(img).removeClass("gt-height");
@@ -187,24 +206,30 @@ var GoToTrip = function () {
     
         if (imgConst > holderConst) {
             $(img).addClass("gt-width");
-        }
-        else {
+        } else {
             $(img).addClass("gt-height");
         }
     
     };
+    
+    
+    
+    
     if ($("div").is(".gt-img-holder")) {
         $(".gt-img-holder ").each(function () {
             self.imgLazyLoadFunc($(this));
         });
+    
         docWindow.resize(function () {
             var resizeTimer;
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function () {
+    
                 $(".gt-img-holder ").each(function () {
                     self.setImgWidthHeightClass($(this));
                 });
-            },250);
+    
+            }, 66);
         });
     }
     
@@ -220,6 +245,7 @@ var GoToTrip = function () {
             newToken,
             resizeTimer;
         setBg();
+    
         function setBg() {
             if (token667.is(":visible")) {
                 bg = el.attr("data-src-phone");

@@ -29,9 +29,9 @@ this.openRestorePass = function () {
 this.closeRestorePass = function () {
     $('#gt-enter-pass-restore-wrapper').removeClass('gt-open')
 };
-enterButton.each(function () {
-    $(this).on('click', self.openEnterForm)
-});
+// enterButton.each(function () {
+//     $(this).on('click', self.openEnterForm)
+// });
 enterClose.on('click', self.closeEnterForm);
 enterChose.on('click', function (event) {
     self.changeEnterRegistration(event);

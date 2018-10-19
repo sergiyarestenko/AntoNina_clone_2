@@ -15,6 +15,7 @@ this.imgLazyLoadFunc = function (el) {
 };
 
 this.setImgWidthHeightClass = function (el) {
+
     var img = el.find('img');
     $(img).removeClass("gt-width");
     $(img).removeClass("gt-height");
@@ -25,24 +26,30 @@ this.setImgWidthHeightClass = function (el) {
 
     if (imgConst > holderConst) {
         $(img).addClass("gt-width");
-    }
-    else {
+    } else {
         $(img).addClass("gt-height");
     }
 
 };
+
+
+
+
 if ($("div").is(".gt-img-holder")) {
     $(".gt-img-holder ").each(function () {
         self.imgLazyLoadFunc($(this));
     });
+
     docWindow.resize(function () {
         var resizeTimer;
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
+
             $(".gt-img-holder ").each(function () {
                 self.setImgWidthHeightClass($(this));
             });
-        },250);
+
+        }, 66);
     });
 }
 
@@ -58,6 +65,7 @@ this.setBg = function (el) {
         newToken,
         resizeTimer;
     setBg();
+
     function setBg() {
         if (token667.is(":visible")) {
             bg = el.attr("data-src-phone");
@@ -97,5 +105,3 @@ if ($('div').is('.gt-bgs-holder')) {
         self.setBg($(this));
     })
 }
-
-

@@ -13,7 +13,10 @@ var GoToTrip = function () {
     //= ./_fix_body
 
 
-    //= ./_header
+   
+    //= ./_new-header
+
+
 
     //= ./_up_button
     //= ./_mobile_menu

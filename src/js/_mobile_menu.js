@@ -10,8 +10,6 @@ this.mobileMenuOpen = function () {
     mobileMenuSwitch.addClass("gt-open");
 };
 
-
-
 mobileMenuSwitch.on("click", function () {
     if ($(this).hasClass("gt-open")) {
         self.mobileMenuClose();
