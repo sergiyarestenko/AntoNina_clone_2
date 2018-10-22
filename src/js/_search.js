@@ -3,13 +3,11 @@ var searchBlock = $('#gt-search-block');
 var searchBlockInput = $('#gt-search-block-input');
 
 
-$('.gt-open-search').each(function () {
-    $(this).on('click', function () {
-        self.openSearchBlock();
-        self.setPseudoBlurListener();
-    });
-
+openSearchBtn.on('click', function () {
+    self.openSearchBlock();
+    self.setPseudoBlurListener();
 });
+
 
 $('#gt-search-block-close').on('click', function () {
     self.closeSearchBlock();
@@ -18,12 +16,12 @@ $('#gt-search-block-close').on('click', function () {
 
 
 this.setPseudoBlurListener = function () {
-    searchBlock.on('click',function (e) {
+    searchBlock.on('click', function (e) {
         var target = $(e.target),
             clear = $('#gt-search-block-clear');
-        if( target.is( clear) || target.is(clear.find('*'))){
+        if (target.is(clear) || target.is(clear.find('*'))) {
             self.clearSearchBlockInput()
-        }else{
+        } else {
             self.showCrossInSearchBlock();
         }
     })
@@ -34,7 +32,7 @@ this.destroyPseudoBlurListener = function () {
 
 
 this.searchReady = function () {
-        searchBlock.addClass('gt-ready');
+    searchBlock.addClass('gt-ready');
 
 };
 this.searchUnready = function () {

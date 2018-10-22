@@ -205,9 +205,9 @@ this.createSlider = function (currSlider, position) {
     function findScreenConst() {
         if (currSlider.attr("data-count")) {
             screenConst = parseInt(currSlider.attr("data-count"));
-            if ($(token768).is(":visible")) screenConst = 3;
-            if ($(token667).is(":visible")) screenConst = 2;
-            if ($(token360).is(":visible")) screenConst = 1;
+            if (self.isMobile()) screenConst = 3;
+            if (self.isSmallScreen()) screenConst = 2;
+            if (self.isTinyScreen()) screenConst = 1;
         }
     }
 

@@ -7,6 +7,7 @@ var GoToTrip = function () {
     //= jquery-ui
     ;
     //= ./_vars
+    //= ./_screen-res
     //= ./_scroll-body
 
 
@@ -19,7 +20,6 @@ var GoToTrip = function () {
 
 
     //= ./_up_button
-    //= ./_mobile_menu
     //= ./_enter_form
 
     //= ./_img_holders
@@ -51,7 +51,7 @@ var GoToTrip = function () {
     //=  ./_cut_news
 
     ///////////////////////////////
-
+    //= _body-click
     //= ./_doc_scroll_listeners
 
     //= ./_test

@@ -1,10 +1,4 @@
-this.deskTopMenuScroll = function () {
-    if (docWindow.scrollTop() > gtHeader.outerHeight()) {
-        gtHeader.addClass("gt-header-scrolled");
-    } else {
-        gtHeader.removeClass("gt-header-scrolled");
-    }
-};
+
 
 
 // if ($("*").is(".gt-top-plane")) {
@@ -13,7 +7,6 @@ this.deskTopMenuScroll = function () {
 
 
 
-self.deskTopMenuScroll();//_desctop_header_func.js
 
 docWindow.resize(function () {
     self.deskTopMenuScroll();

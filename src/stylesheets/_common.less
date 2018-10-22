@@ -7,7 +7,7 @@ html {
     box-sizing: border-box;
     color: @grey-light;
     font-family: @font-family-main;
-    font-size: 18px;
+    font-size: @font-size;
     font-weight: @normal;
     position: relative;
     width: 100%;
@@ -20,8 +20,8 @@ html {
 
 body {
     width: 100%;
-    max-width: 1920px;
-    min-width: 320px;
+    max-width: @max-width;
+    min-width: @min-width;
     margin: 0 auto;
     position: relative;
 }
@@ -102,7 +102,7 @@ ul {
 footer {
     flex-direction: column;
     width: 100%;
-    max-width: 1920px;
+    max-width: @max-width;
     margin: 0 auto;
 }
 
@@ -118,11 +118,13 @@ footer {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: @container-width;
     width: 100%;
     flex-direction: column;
     margin: 0 auto;
-    padding: 0 15px;
+    padding-left: @padd-side;
+    padding-right: @padd-side;
+    .test();//////////////////
     &.container-no-padd {
         padding: 0;
     }

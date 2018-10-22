@@ -26,23 +26,53 @@ var GoToTrip = function () {
             top: false,
             left: false
         },
-        token360 = $("#gt-is-360"),
-        token480 = $("#gt-is-480"),
-        token667 = $("#gt-is-667"),
-        token768 = $("#gt-is-768"),
-        token1024 = $("#gt-is-1024"),
-        token1231 = $("#gt-is-1231"),
         gtHeader = $("#header"),
         gtFooter = $("footer"),
         gtWrapper = $("#gt-wrapper"),
         upButton = $("#gt-up"),
+        openSearchBtn = $('#gt-open-search'),
         mobileMenuSwitch = $("#gt-mobile-menu-switch"),
         enterButton = $('#gt-enter'),
         headerUser = $('#gt-header-user'),
         enterWrapper = $('#gt-header-enter-wrapper'),
         enterForm = $('#gt-header-enter'),
+        userMenuOpen = false,
         enterChose = $('#gt-header-enter-chose'),
         enterClose = $('#gt-header-enter-close');
+    this.isDesktop = function () {
+        if ($("#gt-is-1231").is(":visible")) {
+            return true;
+        }
+        return false;
+    }
+    
+    this.isTablet = function () {
+        if ($("#gt-is-1024").is(":visible")) {
+            return true;
+        }
+        return false;
+    }
+    
+    this.isMobile = function () {
+        if ($("#gt-is-768").is(":visible")) {
+            return true;
+        }
+        return false;
+    }
+    
+    this.isSmallScreen = function () {
+        if ($("#gt-is-667").is(":visible")) {
+            return true;
+        }
+        return false;
+    }
+    
+    this.isTinyScreen = function () {
+        if ($("#gt-is-360").is(":visible")) {
+            return true;
+        }
+        return false;
+    }
     $("html").niceScroll({
         cursorborder: '1px solid #6d6d6d',
         mousescrollstep: '60',
@@ -75,13 +105,34 @@ var GoToTrip = function () {
 
 
    
-    enterButton.on('click', function () {
-        self.toggleHeaderUser();
-    })
+    this.deskTopMenuScroll = function () {
+        if (docWindow.scrollTop() > gtHeader.outerHeight()) {
+            gtHeader.addClass("gt-scrolled");
+        } else {
+            gtHeader.removeClass("gt-scrolled");
+        }
+    };
     
-    $('#gt-header-to-main-menu').on('click', function () {
-        self.closeHeaderUser()
-    });
+    
+    
+    this.mobileMenuOpen = function () {
+        self.fixBody();
+        gtHeader.addClass("gt-open");
+        mobileMenuSwitch.addClass("gt-open");
+    };
+    
+    
+    this.mobileMenuClose = function () {
+        self.unfixBody();
+        mobileMenuSwitch.removeClass("gt-open");
+        gtHeader.removeClass("gt-open");
+    };
+    
+    
+    
+    
+    
+    
     
     this.toggleHeaderUser = function () {
         if (gtHeader.hasClass('gt-user-open')) {
@@ -91,43 +142,23 @@ var GoToTrip = function () {
         }
     }
     
-    
-    
-    
     this.openHeaderUser = function () {
         gtHeader.addClass('gt-user-open');
-        // body.on('click', function (e) {
-        //     var target = e.target;
-        //     console.log(target)
-        //     if (target.is(enterButton) || target.is(headerUser)) {
-        //         console.log('is');
-        //         return;
-        //     } else {
-        //          console.log('closeHeaderUser');
-        //         self.closeHeaderUser();
-        //     }
-        // })
+        self.mobileMenuOpen();
     
+        setTimeout(function () {
+            userMenuOpen = true;
+        }, 500)
     }
     
     this.closeHeaderUser = function () {
-        gtHeader.removeClass('gt-user-open')
+        gtHeader.removeClass('gt-user-open');
+        if (!self.isTablet()) {
+            self.mobileMenuClose();
+        }
+        userMenuOpen = false;
     }
-
-
-
     
-    this.mobileMenuClose = function () {
-        self.unfixBody();
-        mobileMenuSwitch.removeClass("gt-open");
-        gtHeader.removeClass("gt-open");
-    };
-    
-    this.mobileMenuOpen = function () {
-        self.fixBody();
-        gtHeader.addClass("gt-open");
-        mobileMenuSwitch.addClass("gt-open");
-    };
     
     mobileMenuSwitch.on("click", function () {
         if ($(this).hasClass("gt-open")) {
@@ -136,6 +167,22 @@ var GoToTrip = function () {
             self.mobileMenuOpen();
         }
     });
+    
+    
+    $('#gt-header-to-main-menu').on('click', function () {
+        self.closeHeaderUser()
+    });
+    
+    enterButton.on('click', function () {
+        self.toggleHeaderUser();
+    })
+    
+    
+    self.deskTopMenuScroll(); //_desctop_header_func.js
+
+
+
+    
     this.openEnterForm = function () {
         enterWrapper.addClass('gt-open');
         setTimeout(show);
@@ -247,10 +294,10 @@ var GoToTrip = function () {
         setBg();
     
         function setBg() {
-            if (token667.is(":visible")) {
+            if (self.isSmallScreen()) {
                 bg = el.attr("data-src-phone");
                 currToken = 0;
-            } else if (token1024.is(":visible")) {
+            } else if (self.isTablet()) {
                 bg = el.attr("data-src-tablet");
                 currToken = 1;
             } else {
@@ -263,9 +310,9 @@ var GoToTrip = function () {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function () {
     
-                if (token667.is(":visible")) {
+                if (self.isSmallScreen()) {
                     newToken = 0;
-                } else if (token1024.is(":visible")) {
+                } else if (self.isTablet()) {
                     newToken = 1;
                 } else {
                     newToken = 2;
@@ -493,9 +540,9 @@ var GoToTrip = function () {
         function findScreenConst() {
             if (currSlider.attr("data-count")) {
                 screenConst = parseInt(currSlider.attr("data-count"));
-                if ($(token768).is(":visible")) screenConst = 3;
-                if ($(token667).is(":visible")) screenConst = 2;
-                if ($(token360).is(":visible")) screenConst = 1;
+                if (self.isMobile()) screenConst = 3;
+                if (self.isSmallScreen()) screenConst = 2;
+                if (self.isTinyScreen()) screenConst = 1;
             }
         }
     
@@ -1026,13 +1073,11 @@ var GoToTrip = function () {
     var searchBlockInput = $('#gt-search-block-input');
     
     
-    $('.gt-open-search').each(function () {
-        $(this).on('click', function () {
-            self.openSearchBlock();
-            self.setPseudoBlurListener();
-        });
-    
+    openSearchBtn.on('click', function () {
+        self.openSearchBlock();
+        self.setPseudoBlurListener();
     });
+    
     
     $('#gt-search-block-close').on('click', function () {
         self.closeSearchBlock();
@@ -1041,12 +1086,12 @@ var GoToTrip = function () {
     
     
     this.setPseudoBlurListener = function () {
-        searchBlock.on('click',function (e) {
+        searchBlock.on('click', function (e) {
             var target = $(e.target),
                 clear = $('#gt-search-block-clear');
-            if( target.is( clear) || target.is(clear.find('*'))){
+            if (target.is(clear) || target.is(clear.find('*'))) {
                 self.clearSearchBlockInput()
-            }else{
+            } else {
                 self.showCrossInSearchBlock();
             }
         })
@@ -1057,7 +1102,7 @@ var GoToTrip = function () {
     
     
     this.searchReady = function () {
-            searchBlock.addClass('gt-ready');
+        searchBlock.addClass('gt-ready');
     
     };
     this.searchUnready = function () {
@@ -1332,7 +1377,17 @@ var GoToTrip = function () {
     }
 
     ///////////////////////////////
-
+    body.on('click', function (e) {
+        var target = e.target;
+    
+        if (userMenuOpen && !$(target).closest('header').is(' #header')) {
+    
+            self.closeHeaderUser();
+    
+        }
+    
+    
+    })
     this.pageUp = function () {
         $('html, body').animate({scrollTop: 0}, 800);
         return false;
@@ -1345,6 +1400,9 @@ var GoToTrip = function () {
         }
     };
     upButton.on("click", self.pageUp);
+    
+    
+    
     docWindow.scroll(function () {
         self.upPageButton();//_up_button.js
         if ($(".gt-header-menu").is(":visible")) {

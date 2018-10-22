@@ -67,10 +67,10 @@ this.setBg = function (el) {
     setBg();
 
     function setBg() {
-        if (token667.is(":visible")) {
+        if (self.isSmallScreen()) {
             bg = el.attr("data-src-phone");
             currToken = 0;
-        } else if (token1024.is(":visible")) {
+        } else if (self.isTablet()) {
             bg = el.attr("data-src-tablet");
             currToken = 1;
         } else {
@@ -83,9 +83,9 @@ this.setBg = function (el) {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
 
-            if (token667.is(":visible")) {
+            if (self.isSmallScreen()) {
                 newToken = 0;
-            } else if (token1024.is(":visible")) {
+            } else if (self.isTablet()) {
                 newToken = 1;
             } else {
                 newToken = 2;
