@@ -1,10 +1,16 @@
+<div id="gt-header-to-main-menu" class="gt-header-to-main-menu"></div>
+
+
+<!-- имена кнопкам и формам сам дашь -->
+
+
 <div class="gt-header-registration">
     <input id="reg-enter-enter" type="radio" checked name="reg-enter" class="gt-header-registration-btn" value="reg">
     <label for="reg-enter-enter" class="gt-header-registration-btn-enter">Вход</label>
     <input id="reg-enter-reg" type="radio" name="reg-enter" class="gt-header-registration-btn" value="enter">
     <label for="reg-enter-reg" class="gt-header-registration-btn-reg">Регистрация</label>
     <div class="gt-header-registration-form-wrapper">
-        <form id="gt-enter-form" name="gt-enter-form" class="gt-header-registration-form">
+        <form id="gt-reg-form" name="gt-reg-form" class="gt-header-registration-form">
             <p>Войти как пользователь</p>
             <div class="gt-header-registration-form-social">
                 <a href="./#" rel="nofollow"><i id="gt-reg-form-facebook" class="fab fa-facebook-f" aria-hidden="true"></i></a>
@@ -12,23 +18,34 @@
                 <a href="./#" rel="nofollow"><i id="gt-reg-form-google" class="fab fa-google-plus-g" aria-hidden="true"></i></a>
             </div>
 
-            <div class="gt-input-wrapper">
+            <div class="gt-input-wrapper gt-input-wrapper-validator">
                 <input type="text" id="gt-reg-name" placeholder="Логин" title="Не более 10 знаков">
+                <span class="gt-input-wrapper-validation">Не более 10 знаков</span>
+                <span class="gt-input-wrapper-empty">Обязательное поле</span>
+
             </div>
-            <div class="gt-input-wrapper">
+            <div class="gt-input-wrapper gt-input-wrapper-validator">
                 <input type="text" id="gt-reg-email" placeholder="E-mail">
+                <span class="gt-input-wrapper-validation">Некорректный email</span>
+                <span class="gt-input-wrapper-empty">Обязательное поле</span>
             </div>
-            <div class="gt-input-wrapper">
+            <div class="gt-input-wrapper gt-input-wrapper-validator">
                 <input type="password" id="gt-reg-pass" placeholder="Пароль">
+                <span class="gt-input-wrapper-empty">Обязательное поле</span>
+
             </div>
-            <div class="gt-header-enter-form-submit">
-                <input type="text" class="gt-btn" id="gt-reg-form-submit">
-                <label for="gt-reg-form-submit" class="gt-btn gt-btn-whitest">Зарегистрироваться</label>
+            <!-- <div class="gt-input-wrapper">
+                <input type="password" id="gt-reg-pass-repeatr" placeholder="Повторить пароль">
+            </div> -->
+            <div class="gt-header-registration-form-submit">
+                <button id="gt-reg-form-submit" class="gt-btn gt-btn-whitest">
+                    Зарегистрироваться
+                </button>
             </div>
 
 
         </form>
-        <form id="gt-reg-form" name="gt-enter-form" class="gt-header-registration-form">
+        <form id="gt-enter-form" name="gt-enter-form" class="gt-header-registration-form">
             <p>Войти как пользователь</p>
             <div class="gt-header-registration-form-social">
                 <a href="./#" rel="nofollow"><i id="gt-enter-form-facebook" class="fab fa-facebook-f" aria-hidden="true"></i></a>
@@ -38,15 +55,21 @@
             <div class="gt-input-wrapper">
                 <input type="text" id="gt-enter-name" placeholder="Логин или E-mail">
             </div>
-            <div class="gt-input-wrapper">
+            <div class="gt-input-wrapper gt-input-wrapper-validator">
                 <input type="password" id="gt-enter-pass" placeholder="Пароль">
+                <span class="gt-input-wrapper-validation">Неверный пароль или логин</span>
             </div>
-            <div class="gt-header-enter-form-submit">
-                <input type="text" class="gt-btn" id="gt-enter-form-submit">
-                <label for="gt-enter-form-submit" class="gt-btn gt-btn-whitest">Зарегистрироваться</label>
-                <a href="/#" class="gt-enter-form-remember-pass" id="gt-enter-form-restore-pass">
-                    Наполнить пароль
-                </a>
+            <div class="gt-header-registration-form-restore-pass">
+                <span id="gt-enter-form-restore-pass">Наполнить пароль
+                </span>
+            </div>
+
+            <div class="gt-header-registration-form-submit">
+                <button id="gt-enter-form-submit" class="gt-btn gt-btn-whitest">
+                    Вход
+                </button>
+
+
             </div>
 
 

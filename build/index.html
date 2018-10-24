@@ -244,67 +244,22 @@
             </div>
             <div id="gt-header-user" class="gt-header-user">
     <!-- //= registered -->
+    <!-- //= not-registered -->
     <div class="gt-header-registration">
-        <input id="reg-enter-enter" type="radio" checked name="reg-enter" class="gt-header-registration-btn" value="reg">
-        <label for="reg-enter-enter" class="gt-header-registration-btn-enter">Вход</label>
-        <input id="reg-enter-reg" type="radio" name="reg-enter" class="gt-header-registration-btn" value="enter">
-        <label for="reg-enter-reg" class="gt-header-registration-btn-reg">Регистрация</label>
-        <div class="gt-header-registration-form-wrapper">
-            <form id="gt-enter-form" name="gt-enter-form" class="gt-header-registration-form">
-                <p>Войти как пользователь</p>
-                <div class="gt-header-registration-form-social">
-                    <a href="./#" rel="nofollow"><i id="gt-reg-form-facebook" class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="./#" rel="nofollow"><i id="gt-reg-form-twitter" class="fab fa-twitter" aria-hidden="true"></i></a>
-                    <a href="./#" rel="nofollow"><i id="gt-reg-form-google" class="fab fa-google-plus-g" aria-hidden="true"></i></a>
-                </div>
+        <form id="conformation" class="gt-header-registration-form">
+            <p class='text'>На Ваш е-меил отправлен
+                запрос на подтверждение
+                регистрации</p>
     
-                <div class="gt-input-wrapper">
-                    <input type="text" id="gt-reg-name" placeholder="Логин" title="Не более 10 знаков">
-                </div>
-                <div class="gt-input-wrapper">
-                    <input type="text" id="gt-reg-email" placeholder="E-mail">
-                </div>
-                <div class="gt-input-wrapper">
-                    <input type="password" id="gt-reg-pass" placeholder="Пароль">
-                </div>
-                <div class="gt-header-enter-form-submit">
-                    <input type="text" class="gt-btn" id="gt-reg-form-submit">
-                    <label for="gt-reg-form-submit" class="gt-btn gt-btn-whitest">Зарегистрироваться</label>
-                </div>
-    
-    
-            </form>
-            <form id="gt-reg-form" name="gt-enter-form" class="gt-header-registration-form">
-                <p>Войти как пользователь</p>
-                <div class="gt-header-registration-form-social">
-                    <a href="./#" rel="nofollow"><i id="gt-enter-form-facebook" class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="./#" rel="nofollow"><i id="gt-enter-form-twitter" class="fab fa-twitter" aria-hidden="true"></i></a>
-                    <a href="./#" rel="nofollow"><i id="gt-enter-form-google" class="fab fa-google-plus-g" aria-hidden="true"></i></a>
-                </div>
-                <div class="gt-input-wrapper">
-                    <input type="text" id="gt-enter-name" placeholder="Логин или E-mail">
-                </div>
-                <div class="gt-input-wrapper">
-                    <input type="password" id="gt-enter-pass" placeholder="Пароль">
-                </div>
-                <div class="gt-header-enter-form-submit">
-                    <input type="text" class="gt-btn" id="gt-enter-form-submit">
-                    <label for="gt-enter-form-submit" class="gt-btn gt-btn-whitest">Зарегистрироваться</label>
-                    <a href="/#" class="gt-enter-form-remember-pass" id="gt-enter-form-restore-pass">
-                        Наполнить пароль
-                    </a>
-                </div>
-    
-    
-    
-    
-    
-            </form>
-        </div>
-    
-    
-    
+            <div class="gt-header-registration-form-submit">
+                <button id="gt-conformation-form-submit" class="gt-btn gt-btn-whitest">
+                    Отправить
+                </button>
+            </div>
+        </form>
     </div>
+    <!-- //= restore-pass -->
+     
     
             </div>
             <div class="gt-header-social">
@@ -345,6 +300,1322 @@
 </div>
 <!-- ** -->
 
+<!--src/templates/action_menu/main-page.html START-->
+
+<div class="container gt-action-menu-wrapper gt-action-menu-main-page">
+    <div class="gt-action-menu">
+        <div class="gt-action-menu-inner">
+            <div class="gt-icon-holder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.5 47.71">
+                    <path d="M15.45,19.46h8.8a.8.8,0,0,0,0-1.6h-8.8a.8.8,0,1,0,0,1.6Z" />
+                    <path d="M28.25,23.46H11.45a.8.8,0,0,0,0,1.6h16.8a.8.8,0,0,0,0-1.6Z" />
+                    <path d="M28.25,29.06H11.45a.8.8,0,1,0,0,1.6h16.8a.8.8,0,0,0,0-1.6Z" />
+                    <path d="M36.43.25H20.87A11.81,11.81,0,0,0,9.62,8.51,11.83,11.83,0,0,0,.25,20.07v9.08A12.12,12.12,0,0,0,11.45,41v5.19a1.21,1.21,0,0,0,.71,1.17,1.12,1.12,0,0,0,1.25-.29l1.22-1.21a16.58,16.58,0,0,1,11.85-4.83h1.15A11.84,11.84,0,0,0,38.9,32.73a12.11,12.11,0,0,0,9.35-11.59V12.07A11.83,11.83,0,0,0,36.43.25Zm-8.8,39.2H26.48a18.24,18.24,0,0,0-13,5.29l-.44.45V36.92a.8.8,0,0,0-1.6,0v2.49a10.5,10.5,0,0,1-9.6-10.27V20.07a10.24,10.24,0,0,1,8.1-10l.42-.07c.29-.05.57-.08.85-.11s.44,0,.67,0H27.63A10.23,10.23,0,0,1,37.85,20.07v9.08c0,.29,0,.57,0,.85s0,.28,0,.41,0,.18,0,.26c-.07.39-.14.79-.25,1.18l-.13.45a10.24,10.24,0,0,1-9.72,7.15Zm19-18.31A10.47,10.47,0,0,1,39.3,31a1.1,1.1,0,0,0,0-.18c0-.21.06-.41.08-.62s.05-.68.05-1V20.07a11.72,11.72,0,0,0-.24-2.38A11.85,11.85,0,0,0,27.63,8.25H12l-.63,0a10.25,10.25,0,0,1,9.48-6.42H36.43A10.23,10.23,0,0,1,46.65,12.07Z"
+                    />
+                </svg>
+                <span>1</span>
+            </div>
+            <div class="gt-text-holder">
+                <p>Сообщения</p>
+                <p class="gt-text-inner">Советуем узнать больше и увидеть </p>
+            </div>
+        </div>
+        <div class="gt-action-menu-inner">
+            <div class="gt-icon-holder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 31.76">
+                    <path d="M13.93,25.25H5.7a.81.81,0,0,0-.81.81.82.82,0,0,0,.81.82h8.23a.82.82,0,0,0,.81-.82.81.81,0,0,0-.81-.81Z" />
+                    <path d="M26.23,25.25H18a.81.81,0,0,0-.81.81.82.82,0,0,0,.81.82h8.23a.82.82,0,0,0,.81-.82.81.81,0,0,0-.81-.81Z" />
+                    <path d="M26.23,4.89H5.7a.81.81,0,0,0-.81.81.82.82,0,0,0,.81.82H26.23A.82.82,0,0,0,27,5.7a.81.81,0,0,0-.81-.81Z" />
+                    <path d="M26.23,9H18a.81.81,0,0,0-.81.81.82.82,0,0,0,.81.82h8.23A.82.82,0,0,0,27,9.77.81.81,0,0,0,26.23,9Z" />
+                    <path d="M26.23,13H18a.82.82,0,0,0-.81.82.81.81,0,0,0,.81.81h8.23a.81.81,0,0,0,.81-.81.82.82,0,0,0-.81-.82Z" />
+                    <path d="M26.23,17.1H18a.82.82,0,0,0-.81.82.81.81,0,0,0,.81.81h8.23a.81.81,0,0,0,.81-.81.82.82,0,0,0-.81-.82Z" />
+                    <path d="M26.23,21.18H18a.81.81,0,0,0-.81.81.82.82,0,0,0,.81.82h8.23A.82.82,0,0,0,27,22a.81.81,0,0,0-.81-.81Z" />
+                    <path d="M13.93,21.18H5.7a.81.81,0,0,0-.81.81.82.82,0,0,0,.81.82h8.23a.82.82,0,0,0,.81-.82.81.81,0,0,0-.81-.81Z" />
+                    <path d="M13.93,9H5.7a.81.81,0,0,0-.81.81V18a.81.81,0,0,0,.81.81h8.23a.81.81,0,0,0,.81-.81V9.77A.81.81,0,0,0,13.93,9Zm-.82,8.23H6.52v-6.6h6.59Z"
+                    />
+                    <path d="M34.37,4.07H31.93V1.63A1.63,1.63,0,0,0,30.3,0H1.63A1.63,1.63,0,0,0,0,1.63V27.69a4.07,4.07,0,0,0,4.07,4.07H31.93A4.07,4.07,0,0,0,36,27.69V5.7a1.63,1.63,0,0,0-1.63-1.63Zm0,23.62a2.45,2.45,0,0,1-2.44,2.45H4.07a2.45,2.45,0,0,1-2.44-2.45V1.63H30.3V26.47a2,2,0,0,0,2,2,.82.82,0,0,0,.82-.82.82.82,0,0,0-.82-.81.4.4,0,0,1-.4-.41V5.7h2.44Z"
+                    />
+                </svg>
+                <span>3</span>
+            </div>
+            <div class="gt-text-holder">
+                <p>Новости</p>
+                <p class="gt-text-inner">По Вашим публикациям есть новые комментарии</p>
+            </div>
+        </div>
+        <div class="gt-action-menu-inner gt-card-edit">
+            <div class="gt-icon-holder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.5 35.49" style="position: relative; left: .3em">
+                    <path d="M12.44,4.78a3.47,3.47,0,1,0,3.48,3.47A3.48,3.48,0,0,0,12.44,4.78Zm0,5.43a2,2,0,1,1,2-2A2,2,0,0,1,12.44,10.21Z"
+                    />
+                    <path d="M6.7,20.19H18.19a.76.76,0,0,0,.76-.75v-.15a6.5,6.5,0,0,0-13,.15A.75.75,0,0,0,6.7,20.19Zm.86-1.8a5,5,0,0,1,9.77,0l.07.3H7.49Z"
+                    />
+                    <path d="M13.94,23.83H6a.76.76,0,0,0,0,1.51h8a.76.76,0,0,0,0-1.51Z" />
+                    <path d="M9.54,30.1h4.4a.75.75,0,0,0,0-1.5H9.54a.75.75,0,0,0,0,1.5Z" />
+                    <path d="M24.87,27.71l9.72-11.94a3.92,3.92,0,0,0,.89-2.92A4,4,0,0,0,34,10.14h0a4,4,0,0,0-5.64.58L24.88,15V2.64A2.65,2.65,0,0,0,22.24,0H2.64A2.65,2.65,0,0,0,0,2.64V29a2.58,2.58,0,0,0,.77,1.86l3.89,3.9a2.66,2.66,0,0,0,1.87.77h15.7a2.65,2.65,0,0,0,2.64-2.65Zm4.77-16.13a2.49,2.49,0,0,1,3.87,3.14l-.15.22-3.9-3.17ZM5,32.94,2.56,30.49H5ZM22.24,34H6.51V29.74A.76.76,0,0,0,5.76,29H1.5V2.64A1.14,1.14,0,0,1,2.63,1.51h19.6a1.13,1.13,0,0,1,1.13,1.13V16.87l-5.89,7.24a.74.74,0,0,0-.17.55l.48,4.59a.74.74,0,0,0,.82.67l4.76-.5,0,3.44A1.15,1.15,0,0,1,22.24,34Zm-3.33-8.46L22,28l-2.8.3Zm4.45,1.68-3.9-3.16,9.05-11.12,3.9,3.16Z"
+                    />
+                    </g>
+                    </g>
+                </svg>
+                <span>99</span>
+            </div>
+            <div class="gt-text-holder">
+                <p>Публикации</p>
+                <p class="gt-text-inner">У Вас пока нет созданных маршрутов</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--src/templates/action_menu/main-page.html END-->
+<!-- ** -->
+
+<div class="gt-shadow-slider container gt-margin">
+    <div class="gt-shadow-slider-text">
+        <p class="gt-blue">ПОДБОРКИ</p>
+        <h2 class="gt-shadow-slider-header gt-black">Шедевры Антонио Гауди</h2>
+        <p>Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди
+            гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается
+            классификации.</p>
+        <a href=".#"><span class="gt-a-news gt-a-news-animation">Читать далее</span></a>
+    </div>
+    <div class="gt-slider gt-slider-has-arrow gt-slider-num gt-slider-tram">
+        <div class="gt-slider-container">
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/sagrada-familya-25.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/guell-colony-cripta-01.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/escuelas-sf-01.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-mila-01.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/gaudi_slider/casa-botines-02.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="gt-shadow-slider-text-shadow"></div>
+    </div>
+</div>
+<!-- ** -->
+
+
+
+<div class="container gt-news-container gt-margin">
+    <div class="gt-news-outer gt-news-outer-big">
+        <a href="/new-single-page.html" class="gt-news gt-news-big">
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-1.png"
+                    alt="alt">
+            </div>
+        
+            <div class="gt-news-big-text gt-news-big-text-bottom">
+                <div class="gt-news-link">
+                    <p>Публикации</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи</p>
+                </div>
+            </div>
+        
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-sm">
+        <a href="./publication-article.html" class="gt-news gt-news-small">
+            <div class="gt-news-small-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-2.png"
+                        alt="alt">
+                </div>
+            </div>
+            <div class="gt-news-small-text">
+                <div class="gt-news-link">
+                    <p>Публикации</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи статьи статьи статьи статьи</p>
+                </div>
+                <div class="gt-news-small-text-main  js-news-cut">
+                    <p> Обрезает по высоте блока.</p>
+                    <p> Пару строк. Отлично подходит три строки но лучше.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-sm">
+        <a href="./publication-article.html" class="gt-news gt-news-small">
+            <div class="gt-news-small-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-2.png"
+                        alt="alt">
+                </div>
+            </div>
+            <div class="gt-news-small-text">
+                <div class="gt-news-link">
+                    <p>Публикации</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи статьи статьи статьи статьи</p>
+                </div>
+                <div class="gt-news-small-text-main  js-news-cut">
+                    <p> Обрезает по высоте блока.</p>
+                    <p> Пару строк. Отлично подходит три строки но лучше.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- ** -->
+
+
+<div class="container gt-news-container gt-margin">
+    <div class="gt-news-outer gt-news-outer-small gt-sm-order-2 gt-news-outer-margin-sm">
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-big">
+        <a href="/new-single-page.html" class="gt-news gt-news-big">
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-4.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-big-text gt-news-big-text-top">
+                <div class="gt-news-link">
+                    <p>28.11.2017</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+            </div>
+            <div class="gt-news-big-text gt-news-big-text-bottom">
+                <div class="gt-news-link">
+                    <p class="gt-a-news">Новости</p>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-sm-order-2  gt-news-outer-margin-sm">
+        <a href="./new-single-page.html" class="gt-news gt-news-small">
+            <div class="gt-news-small-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-2.png"
+                        alt="alt">
+                </div>
+            </div>
+            <div class="gt-news-small-text">
+                <div class="gt-news-link">
+                    <span>31.04.2017</span>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <p class="gt-news-link">
+                    <b class="gt-a-news">Новости</b>
+                </p>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи статьи статьи статьи статьи</p>
+                </div>
+        
+                <div class="gt-news-small-text-main  js-news-cut">
+                    <p> Обрезает по высоте блока.</p>
+                    <p> Пару строк. Отлично подходит три строки но лучше.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- ** -->
+
+
+
+<div class="gt-video gt-margin">
+    <div class="gt-video-text">
+        <div class="container">
+            <p><span class="gt-a-video">Видео</span></p>
+            <p>Новогодние фейерверки и лазерное шоу 2018</p>
+        </div>
+    </div>
+    <div class="gt-video-inner">
+        <div class="gt-video-img">
+            <div class="gt-img-holder gt-shadow-100">
+                <img
+                        class="lazy"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                        data-src= "../images/video-bg.png"
+                        alt="abs"
+                >
+            </div>
+        </div>
+    </div>
+    <div class="gt-video-wrapper ">
+
+        <script src="https://apis.google.com/js/platform.js"></script>
+
+        <div class="g-ytsubscribe" data-channelid="UCRfiVwj7VACf-7xR0Jewnlw" data-layout="default" data-count="default"></div>
+        <video muted
+               autoplay
+               controls
+               width='1920'
+               height='1080'
+
+        >
+            <source src="https://youtu.be/r-EK1mjRMec" type="video/youtube">
+        </video>
+    </div>
+    <div class="gt-video-switch">
+        <div class="gt-loader">
+            <div class="gt-loader_1 circularG"></div>
+            <div class="gt-loader_2 circularG"></div>
+            <div class="gt-loader_3 circularG"></div>
+            <div class="gt-loader_4 circularG"></div>
+            <div class="gt-loader_5 circularG"></div>
+            <div class="gt-loader_6 circularG"></div>
+            <div class="gt-loader_7 circularG"></div>
+            <div class="gt-loader_8 circularG"></div>
+        </div>
+    </div>
+
+</div>
+<!-- ** -->
+<div class="gt-one-new container gt-margin">
+    <div class="gt-one-new-text">
+        <h2>Париж</h2>
+        <p>Столица высокой моды располагает к романтике и может поведать миллионы любовных историй</p>
+        <a class="gt-a-news gt-a-news-animation" href="/city-paris.html">ЧИТАТЬ ДАЛЬШЕ</a>
+    </div>
+    <div class="gt-one-new-img">
+        <div class="gt-img-holder">
+            <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/link-block-img.png"
+                alt="ALT">
+        </div>
+    </div>
+</div>
+<!-- **-->
+
+
+<div class="container gt-news-container gt-margin">
+    <div class="gt-news-outer gt-news-outer-small">
+        <a href="/new-single-page.html" class="gt-news gt-news-image">
+        
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-vert-1.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-image-text">
+                <p class="gt-news-image-text-title">Страна</p>
+                <p class="gt-news-image-text-header">Просто заголовок</p>
+            </div>
+        </a>
+        <!--todo не всегда коррректно отрабатывает скрипт ширину-->
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-xxs">
+        <a href="/new-single-page.html" class="gt-news gt-news-image">
+        
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-vert-1.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-image-text">
+                <p class="gt-news-image-text-title">Страна</p>
+                <p class="gt-news-image-text-header">Просто заголовок</p>
+            </div>
+        </a>
+        <!--todo не всегда коррректно отрабатывает скрипт ширину-->
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-sm">
+        <a href="/new-single-page.html" class="gt-news gt-news-image">
+        
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-vert-1.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-image-text">
+                <p class="gt-news-image-text-title">Страна</p>
+                <p class="gt-news-image-text-header">Просто заголовок</p>
+            </div>
+        </a>
+        <!--todo не всегда коррректно отрабатывает скрипт ширину-->
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-sm gt-news-outer-height-xxs">
+        <div class="gt-news  gt-news-plane">
+            <h2 class="gt-black">Популярные места</h2>
+            <p>Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.</p>
+            <p>Я совсем один и блаженствую в здешнем краю.</p>
+            <a href="./new-single-page.html">
+                <em class="gt-btn gt-btn-45 gt-btn-white">Подробнее</em>
+            </a>
+        
+        
+        </div>
+    </div>
+</div>
+
+<!-- ** -->
+<div class="container gt-news-container gt-margin">
+    <div class="gt-news-outer gt-news-outer-small gt-sm-order-2 gt-news-outer-margin-sm">
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-big">
+        <a href="/new-single-page.html" class="gt-news gt-news-big">
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-4.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-big-text gt-news-big-text-top">
+                <div class="gt-news-link">
+                    <p>28.11.2017</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+            </div>
+            <div class="gt-news-big-text gt-news-big-text-bottom">
+                <div class="gt-news-link">
+                    <p class="gt-a-news">Новости</p>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-sm-order-2  gt-news-outer-margin-sm">
+        <a href="./new-single-page.html" class="gt-news gt-news-small">
+            <div class="gt-news-small-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-2.png"
+                        alt="alt">
+                </div>
+            </div>
+            <div class="gt-news-small-text">
+                <div class="gt-news-link">
+                    <span>31.04.2017</span>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <p class="gt-news-link">
+                    <b class="gt-a-news">Новости</b>
+                </p>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи статьи статьи статьи статьи</p>
+                </div>
+        
+                <div class="gt-news-small-text-main  js-news-cut">
+                    <p> Обрезает по высоте блока.</p>
+                    <p> Пару строк. Отлично подходит три строки но лучше.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- ** -->
+
+
+
+
+
+<div class="gt-video gt-margin">
+    <div class="gt-video-text">
+        <div class="container">
+            <p><span class="gt-a-video">Видео</span></p>
+            <p>Пирамида Хеопса (The Pyramid of Cheops)</p>
+        </div>
+    </div>
+    <div class="gt-video-inner">
+        <div class="gt-video-img">
+            <div class="gt-img-holder gt-shadow-100">
+                <img
+                        class="lazy"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                        data-src= "../images/_pages/disappear_slider/arizona-barringer-crater-01.jpg"
+                        alt="abs"
+                >
+            </div>
+        </div>
+    </div>
+    <div class="gt-video-wrapper ">
+        <video muted
+               autoplay
+               controls
+               width='1920'
+               height='1080'
+        >
+            <source src="https://youtu.be/q5Dqif8RqGE" type="video/youtube">
+        </video>
+    </div>
+    <div class="gt-video-switch">
+        <div class="gt-loader">
+            <div class="gt-loader_1 circularG"></div>
+            <div class="gt-loader_2 circularG"></div>
+            <div class="gt-loader_3 circularG"></div>
+            <div class="gt-loader_4 circularG"></div>
+            <div class="gt-loader_5 circularG"></div>
+            <div class="gt-loader_6 circularG"></div>
+            <div class="gt-loader_7 circularG"></div>
+            <div class="gt-loader_8 circularG"></div>
+        </div>
+    </div>
+
+</div>
+<!-- ** -->
+<div class="gt-shadow-slider container gt-margin">
+    <div class="gt-shadow-slider-text">
+        <p class="gt-blue">ПОДБОРКИ</p>
+        <h2 class="gt-shadow-slider-header gt-black">Туристические направления Китая</h2>
+        <p>Каждый регион Китая по-своему интересен и привлекателен для туриста. На кого-то производит впечатление
+            уникальная древняя архитектура, кто-то восхищается культурными реликвиями музейных экспозиций, кому-то
+            больше по душе завораживающие природные богатства.</p>
+        <a href=".#"><span class="gt-a-news gt-a-news-animation">Читать далее</span></a>
+
+    </div>
+    <div class="gt-slider gt-slider-has-arrow gt-slider-num gt-slider-tram" data-duration='400'>
+        <!--<div class="gt-slider gt-slider-has-dots gt-slider-tram">-->
+        <div class="gt-slider-container">
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/china_slider/guilin-11.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/china_slider/sanya-09.png"
+                         alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/china_slider/tibet-lhasa-01.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+            <div class="gt-slider-inner">
+                <div class="gt-img-holder gt-shadow-70">
+                    <img
+                            class="lazy"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                            data-src= "../images/china_slider/yabuli-06.png"
+                            alt="alt"
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="gt-shadow-slider-text-shadow"></div>
+    </div>
+</div>
+
+<!--todo не работает стралка влево-->
+<!-- ** -->
+<div class="container gt-news-container gt-margin">
+    <div class="gt-news-outer gt-news-outer-big">
+        <a href="/new-single-page.html" class="gt-news gt-news-big">
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-1.png"
+                    alt="alt">
+            </div>
+        
+            <div class="gt-news-big-text gt-news-big-text-bottom">
+                <div class="gt-news-link">
+                    <p>Публикации</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи</p>
+                </div>
+            </div>
+        
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-sm">
+        <a href="./publication-article.html" class="gt-news gt-news-small">
+            <div class="gt-news-small-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-2.png"
+                        alt="alt">
+                </div>
+            </div>
+            <div class="gt-news-small-text">
+                <div class="gt-news-link">
+                    <p>Публикации</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи статьи статьи статьи статьи</p>
+                </div>
+                <div class="gt-news-small-text-main  js-news-cut">
+                    <p> Обрезает по высоте блока.</p>
+                    <p> Пару строк. Отлично подходит три строки но лучше.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-sm">
+        <a href="./publication-article.html" class="gt-news gt-news-small">
+            <div class="gt-news-small-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-2.png"
+                        alt="alt">
+                </div>
+            </div>
+            <div class="gt-news-small-text">
+                <div class="gt-news-link">
+                    <p>Публикации</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи статьи статьи статьи статьи</p>
+                </div>
+                <div class="gt-news-small-text-main  js-news-cut">
+                    <p> Обрезает по высоте блока.</p>
+                    <p> Пару строк. Отлично подходит три строки но лучше.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- ** -->
+<div class="container gt-news-container gt-margin">
+    <div class="gt-news-outer gt-news-outer-small gt-sm-order-2 gt-news-outer-margin-sm">
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-big">
+        <a href="/new-single-page.html" class="gt-news gt-news-big">
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-4.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-big-text gt-news-big-text-top">
+                <div class="gt-news-link">
+                    <p>28.11.2017</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+            </div>
+            <div class="gt-news-big-text gt-news-big-text-bottom">
+                <div class="gt-news-link">
+                    <p class="gt-a-news">Новости</p>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-sm-order-2  gt-news-outer-margin-sm">
+        <a href="./new-single-page.html" class="gt-news gt-news-small">
+            <div class="gt-news-small-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-2.png"
+                        alt="alt">
+                </div>
+            </div>
+            <div class="gt-news-small-text">
+                <div class="gt-news-link">
+                    <span>31.04.2017</span>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <p class="gt-news-link">
+                    <b class="gt-a-news">Новости</b>
+                </p>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи статьи статьи статьи статьи</p>
+                </div>
+        
+                <div class="gt-news-small-text-main  js-news-cut">
+                    <p> Обрезает по высоте блока.</p>
+                    <p> Пару строк. Отлично подходит три строки но лучше.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- ** -->
+<!-- ** -->
+<div class="gt-video gt-margin">
+    <div class="gt-video-text">
+        <div class="container">
+            <p><span class="gt-a-video">Видео</span></p>
+            <p>Новогодние фейерверки и лазерное шоу 2018</p>
+        </div>
+    </div>
+    <div class="gt-video-inner">
+        <div class="gt-video-img">
+            <div class="gt-img-holder gt-shadow-100">
+                <img
+                        class="lazy"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                        data-src= "../images/video-bg.png"
+                        alt="abs"
+                >
+            </div>
+        </div>
+    </div>
+    <div class="gt-video-wrapper ">
+
+        <script src="https://apis.google.com/js/platform.js"></script>
+
+        <div class="g-ytsubscribe" data-channelid="UCRfiVwj7VACf-7xR0Jewnlw" data-layout="default" data-count="default"></div>
+        <video muted
+               autoplay
+               controls
+               width='1920'
+               height='1080'
+
+        >
+            <source src="https://youtu.be/r-EK1mjRMec" type="video/youtube">
+        </video>
+    </div>
+    <div class="gt-video-switch">
+        <div class="gt-loader">
+            <div class="gt-loader_1 circularG"></div>
+            <div class="gt-loader_2 circularG"></div>
+            <div class="gt-loader_3 circularG"></div>
+            <div class="gt-loader_4 circularG"></div>
+            <div class="gt-loader_5 circularG"></div>
+            <div class="gt-loader_6 circularG"></div>
+            <div class="gt-loader_7 circularG"></div>
+            <div class="gt-loader_8 circularG"></div>
+        </div>
+    </div>
+
+</div>
+<!-- ** -->
+<div class="gt-one-new container gt-margin">
+    <div class="gt-one-new-text">
+        <h2>Франция</h2>
+        <p>Переход на страницу Страна.</p>
+        <p>
+            Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+        </p>
+        <a class="gt-a-news gt-a-news-animation" href="/country-france.html">ЧИТАТЬ ДАЛЬШЕ</a>
+    </div>
+    <div class="gt-one-new-img">
+        <div class="gt-img-holder ">
+            <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/must-video.png"
+                alt="ALT">
+        </div>
+    </div>
+</div>
+<!-- ** -->
+<div class="container gt-news-container gt-margin">
+    <div class="gt-news-outer gt-news-outer-small">
+        <a href="/new-single-page.html" class="gt-news gt-news-image">
+        
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-vert-1.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-image-text">
+                <p class="gt-news-image-text-title">Страна</p>
+                <p class="gt-news-image-text-header">Просто заголовок</p>
+            </div>
+        </a>
+        <!--todo не всегда коррректно отрабатывает скрипт ширину-->
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-xxs">
+        <a href="/new-single-page.html" class="gt-news gt-news-image">
+        
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-vert-1.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-image-text">
+                <p class="gt-news-image-text-title">Страна</p>
+                <p class="gt-news-image-text-header">Просто заголовок</p>
+            </div>
+        </a>
+        <!--todo не всегда коррректно отрабатывает скрипт ширину-->
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-sm">
+        <a href="/new-single-page.html" class="gt-news gt-news-image">
+        
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-vert-1.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-image-text">
+                <p class="gt-news-image-text-title">Страна</p>
+                <p class="gt-news-image-text-header">Просто заголовок</p>
+            </div>
+        </a>
+        <!--todo не всегда коррректно отрабатывает скрипт ширину-->
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-news-outer-margin-sm gt-news-outer-height-xxs">
+        <div class="gt-news  gt-news-plane">
+            <h2 class="gt-black">Популярные места</h2>
+            <p>Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.</p>
+            <p>Я совсем один и блаженствую в здешнем краю.</p>
+            <a href="./new-single-page.html">
+                <em class="gt-btn gt-btn-45 gt-btn-white">Подробнее</em>
+            </a>
+        
+        
+        </div>
+    </div>
+</div>
+<!-- ** -->
+<div class="container gt-news-container gt-margin">
+    <div class="gt-news-outer gt-news-outer-small gt-sm-order-2 gt-news-outer-margin-sm">
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+        <!-- // -->
+        <a href="./new-single-page.html" class="gt-news-prev">
+            <div class="gt-news-prev-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/prew-news-1.png"
+                        alt="">
+                </div>
+            </div>
+            <div class="gt-news-prev-text">
+                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                <p class="gt-news-prev-date">28.07.2007</p>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-big">
+        <a href="/new-single-page.html" class="gt-news gt-news-big">
+            <div class="gt-img-holder gt-shadow-100">
+                <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-4.png"
+                    alt="alt">
+            </div>
+            <div class="gt-news-big-text gt-news-big-text-top">
+                <div class="gt-news-link">
+                    <p>28.11.2017</p>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+            </div>
+            <div class="gt-news-big-text gt-news-big-text-bottom">
+                <div class="gt-news-link">
+                    <p class="gt-a-news">Новости</p>
+                </div>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="gt-news-outer gt-news-outer-small gt-sm-order-2  gt-news-outer-margin-sm">
+        <a href="./new-single-page.html" class="gt-news gt-news-small">
+            <div class="gt-news-small-img">
+                <div class="gt-img-holder ">
+                    <img class="lazy" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="../images/news/news-2.png"
+                        alt="alt">
+                </div>
+            </div>
+            <div class="gt-news-small-text">
+                <div class="gt-news-link">
+                    <span>31.04.2017</span>
+                    <i class="fa fa-eye"></i>
+                    <span>215</span>
+                </div>
+                <p class="gt-news-link">
+                    <b class="gt-a-news">Новости</b>
+                </p>
+                <div class="gt-news-header">
+                    <p>Заголовок статьи статьи статьи статьи статьи</p>
+                </div>
+        
+                <div class="gt-news-small-text-main  js-news-cut">
+                    <p> Обрезает по высоте блока.</p>
+                    <p> Пару строк. Отлично подходит три строки но лучше.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                    <p> Краткое описание статьи. Пару строк. Отлично подходит три строки но лучше не рвать предложение.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+**
+<div class="container">
+    <div class="gt-read-more gt-margin">
+        <input type="button" class=" gt-btn" id="gt-read-more-but">
+        <label for="gt-read-more-but"  class="gt-btn gt-btn-white gt-btn-45">Смотреть еще</label>
+    </div>
+
+</div>
+<!-- ** -->
+
+
+
+
+<!--src/templates/button-block/code.html START-->
+
+<div class="gt-button-block-wrapper">
+    <div class="gt-button-block container">
+        <a class="gt-button-block-avia" href="/partnership.html">Авиабилеты</a>
+        <a class="gt-button-block-hotels" href="/partnership.html">Отели</a>
+        <a class="gt-button-block-carrent" href="/partnership.html">Прокат авто</a>
+        <a class="gt-button-block-bus" href="/partnership.html">Ж/д и автобусы</a>
+        <a class="gt-button-block-ship" href="/partnership.html">Круизы</a>
+        <a class="gt-button-block-hottour" href="/partnership.html">Горящие туры</a>
+        <a class="gt-button-block-insurance" href="/partnership.html">Страхование</a>
+        <a class="gt-button-block-visas" href="/partnership.html">Визы</a>
+    </div>
+</div>
+
+<!--src/templates/button-block/code.html END-->
 <!-- ** -->
 </div>
 <footer

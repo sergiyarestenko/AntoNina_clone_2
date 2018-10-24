@@ -22,11 +22,6 @@ this.mobileMenuClose = function () {
 };
 
 
-
-
-
-
-
 this.toggleHeaderUser = function () {
     if (gtHeader.hasClass('gt-user-open')) {
         self.closeHeaderUser();

@@ -38,6 +38,7 @@ var GoToTrip = function () {
 
     //= ./_partnership
 
+    //= ./_registration
     //= ./_select
     //= ./_top_cards
     //= ./_search
