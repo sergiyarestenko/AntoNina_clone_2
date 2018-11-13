@@ -272,6 +272,22 @@ var GoToTrip = function () {
             }, 66);
         });
     }
+    if ($("div").is(".gt-img-holder-abs")) {
+        $(".gt-img-holder-abs").each(function () {
+            self.imgLazyLoadFunc($(this));
+        });
+    
+        docWindow.resize(function () {
+            var resizeTimer;
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+    
+                $(".gt-img-holder-abs").each(function () {
+                    self.setImgWidthHeightClass($(this));
+                });
+            }, 66);
+        });
+    }
     
     // ---img-holder//\\--- bg-holder \\\///
     

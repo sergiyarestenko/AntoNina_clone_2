@@ -11,6 +11,7 @@ const config = require('./gulpconfig.js'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     connect = require('gulp-connect'),
+    sys = require('util'),
     gutil = require('gulp-util'),
     browserSync = require('browser-sync').create(),
     logger = require('logger').createLogger();
@@ -102,5 +103,5 @@ gulp.task('watch', function () {
 });
 
 
-// gulp.task('default', ['img', 'fonts' , 'js','css', 'jsLibs', 'html', 'serve', 'watch']);
+gulp.task('transfer', ['img', 'fonts' , 'js','css', 'jsLibs', 'html']);
 gulp.task('default', [ 'css',  'js', 'jsLibs','html', 'serve', 'watch']);

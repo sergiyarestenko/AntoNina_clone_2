@@ -500,3 +500,20 @@ footer {
         background-size: contain;
     }
 }
+
+.gt-non-touch,
+.gt-touch {
+    display: none;
+}
+
+@media (any-pointer: coarse) {
+    .gt-touch {
+        display: flex;
+    }
+}
+
+@media (any-pointer: fine) {
+    .gt-non-touch {
+        display: flex;
+    }
+}
