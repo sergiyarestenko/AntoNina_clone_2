@@ -40,11 +40,7 @@ if ($("div").is(".js-news-cut")) {
     $(".js-news-cut").each(function () {
         self.cutNews($(this));
     });
-    docWindow.resize(function () {
-        $(".js-news-cut").each(function () {
-            self.cutNews($(this));
-        });
-    });
+   
 }
 
 

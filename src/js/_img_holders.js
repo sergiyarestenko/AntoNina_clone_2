@@ -32,42 +32,57 @@ this.setImgWidthHeightClass = function (el) {
 
 };
 
+this.updateImgHolder = function(){
+    if ($("*").is(".gt-img-holder")) {
+        $(".gt-img-holder").each(function () {
+            self.imgLazyLoadFunc($(this));
+        });
+    }
+    if ($("*").is(".gt-img-holder-abs")) {
+        $(".gt-img-holder-abs").each(function () {
+            self.imgLazyLoadFunc($(this));
+        });
+    }
 
-
-
-if ($("div").is(".gt-img-holder")) {
-    $(".gt-img-holder ").each(function () {
-        self.imgLazyLoadFunc($(this));
-    });
-
-    docWindow.resize(function () {
-        var resizeTimer;
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
-
-            $(".gt-img-holder ").each(function () {
-                self.setImgWidthHeightClass($(this));
-            });
-
-        }, 66);
-    });
 }
-if ($("div").is(".gt-img-holder-abs")) {
-    $(".gt-img-holder-abs").each(function () {
-        self.imgLazyLoadFunc($(this));
-    });
 
-    docWindow.resize(function () {
-        var resizeTimer;
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
 
-            $(".gt-img-holder-abs").each(function () {
-                self.setImgWidthHeightClass($(this));
-            });
-        }, 66);
-    });
-}
+
+
+
+// if ($("div").is(".gt-img-holder")) {
+//     $(".gt-img-holder ").each(function () {
+//         self.imgLazyLoadFunc($(this));
+//     });
+
+//     docWindow.resize(function () {
+//         var resizeTimer;
+//         clearTimeout(resizeTimer);
+//         resizeTimer = setTimeout(function () {
+
+//             $(".gt-img-holder ").each(function () {
+//                 self.setImgWidthHeightClass($(this));
+//             });
+
+//         }, 66);
+//     });
+// }
+// if ($("div").is(".gt-img-holder-abs")) {
+//     $(".gt-img-holder-abs").each(function () {
+//         self.imgLazyLoadFunc($(this));
+//     });
+
+//     docWindow.resize(function () {
+//         var resizeTimer;
+//         clearTimeout(resizeTimer);
+//         resizeTimer = setTimeout(function () {
+
+//             $(".gt-img-holder-abs").each(function () {
+//                 self.setImgWidthHeightClass($(this));
+//             });
+//         }, 66);
+//     });
+// }
 
 // ---img-holder//\\--- bg-holder \\\///
 
@@ -116,7 +131,7 @@ this.setBg = function (el) {
 
 
 
-if ($('div').is('.gt-bgs-holder')) {
+if ($('*').is('.gt-bgs-holder')) {
     $('.gt-bgs-holder').each(function () {
         self.setBg($(this));
     })

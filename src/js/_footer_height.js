@@ -13,8 +13,3 @@ this.footerHeight = function () {
 
 self.footerHeight();//_footer_height.js
 
-docWindow.resize(function () {
-    self.footerHeight();
-
-
-})

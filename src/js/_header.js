@@ -8,8 +8,3 @@
 
 
 
-docWindow.resize(function () {
-    self.deskTopMenuScroll();
-    if (gtHeader.hasClass("gt-open")) self.mobileMenuClose();
-
-})
