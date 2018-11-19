@@ -11,8 +11,9 @@ var GoToTrip = function () {
                              //= ./_enter_form
                              //= ./_img_holders
                              //= ./_slider
+                             //= ./_datepicker
                              //= ./_hundred_menu
-                             //= _news_menu
+                             //= ./_news_menu
                              //= ./_video
                              //= ./_article_scroll_table
                              //= ./_curr_time
@@ -30,8 +31,8 @@ var GoToTrip = function () {
                              //= ./_social_enter
                              //=  ./_cut_news
                              ///////////////////////////////
-                             //= _body-click
-                             //= _listeners
+                             //= ./_body-click
+                             //= ./_listeners
                              //= ./_doc_scroll_listeners
                              //= ./_test
                            };

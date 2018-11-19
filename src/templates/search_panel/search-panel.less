@@ -16,12 +16,14 @@
     left: 0;
     right: 0;
     bottom: 50px;
+    z-index: 50;
     &-form {
       width: 430px;
       margin: auto;
       position: relative;
+
       input {
-        &[type = "text"] {
+        &[type="text"] {
           color: @white;
           font-size: 20px;
           font-weight: @light;
@@ -32,9 +34,18 @@
           width: 100%;
           .gt-placeholder(@white-50);
         }
-        &[type = "submit"] {
+        &[type="submit"] {
           display: none;
         }
+        &.datepicker {
+        position: absolute;
+        top:1em;
+        right:2em;
+        height: 0;
+        width: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
       }
       label {
         position: absolute;
@@ -42,6 +53,7 @@
         top: 0;
         height: 100%;
       }
+
     }
     &-select {
       width: 470px;
@@ -53,17 +65,31 @@
         width: 100%;
         height: 100%;
       }
-      .select__gap,.select__list {
+      .select__gap,
+      .select__list {
         background-color: @white-90;
       }
-      .select__list{
+      .select__list {
         max-height: 350px;
         overflow: auto;
         .gt-scrollbar();
       }
-      .select__item{
-        padding: .5em 1em;
+      .select__item {
+        padding: 0.5em 1em;
       }
     }
   }
+}
+
+.gt-datepicker-icon {
+  height: 18px;
+  width: 18px;
+  border: none;
+  cursor: pointer;
+  background: transparent url("../images/icons/calendar-icon-white.svg")
+    no-repeat 100% 0;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  outline: none !important;
 }

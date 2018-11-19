@@ -2,338 +2,336 @@
 @import "../../stylesheets/_variables";
 @import "../../stylesheets/_mixin";
 .gt-collection {
+  &-wrapper {
+    padding-top: 10px !important;
+  }
+  &-link {
+    flex-direction: column;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 14px;
+    position: relative;
+    background: @white;
+    .gt-box-shadow(7px, 7px, 15px, 0.03);
     &-wrapper {
-        padding-top: 10px !important;
+      padding: 7px 0;
     }
-    &-link {
-        flex-direction: column;
-        width: 75%;
-        margin: 0 auto;
-        font-size: 14px;
-        position: relative;
-        background: @white;
-        .gt-box-shadow(7px, 7px, 15px, 0.03);
-        &-wrapper {
-            padding: 7px 0;
-        }
-        &-img {
-            position: relative;
-            width: 100%;
-            height: 550px;
-            z-index: 2;
-            &-slider {
-                height: 100%;
-                width: 100%;
-            }
-        }
-        &-text {
-            position: relative;
-            flex-direction: column;
-            padding: 30px 35px 15px;
-            z-index: 1;
-            >a {
-                font-size: 16px;
-                color: @black;
-                margin-bottom: 25px;
-                margin-left: 5em;
-                padding-right: 250px;
-            }
-            p {
-                line-height: 1.5;
-            }
-        }
-        &-slider {
-            padding-bottom: 40px;
-            font-weight: @light;
-            &-wrapper {
-                position: absolute;
-                right: -35px;
-                bottom: -50px;
-                flex-direction: column;
-                z-index: 10;
-                width: 300px;
-                height: 190px;
-                background: @black-70;
-                color: @white;
-                p {
-                    font-size: 20px;
-                    justify-content: center;
-                    margin-top: 0.75em;
-                    margin-bottom: 0.5em;
-                }
-            }
-            p {
-                text-align: center;
-                font-size: 13px;
-                line-height: 1.42;
-                align-content: center;
-                height: auto;
-                margin: auto 0;
-            }
-            .gt-slider {
-                &-container {
-                    height: 130px;
-                }
-                &-inner {
-                    height: 100%;
-                    overflow: hidden;
-                    padding-left: 2em;
-                    padding-right: 2em;
-                }
-                &-arrow {
-                    background-color: transparent;
-                    top: 40px;
-                    &.left {
-                        left: -5px;
-                    }
-                    &.right {
-                        right: 0px;
-                    }
-                }
-            }
-        }
-        &-number {
-            @size: 90px;
-            background: @black-70;
-            color: @white;
-            height: @size;
-            width: @size;
-            position: absolute;
-            left: 0;
-            bottom: -40px;
-            justify-content: center;
-            align-items: center;
-            font-size: 40px;
-            font-weight: @bold;
-        }
-        &-read-more {
-            padding-top: 0.5em;
-            justify-content: flex-end;
-        }
+    &-img {
+      position: relative;
+      width: 100%;
+      height: 550px;
+      z-index: 2;
+      &-slider {
+        height: 100%;
+        width: 100%;
+      }
     }
     &-text {
-        position: absolute;
-        top: 10px;
-        width: 33%;
-        height: ~"calc(100% - 50px)";
-        flex-direction: column;
-        padding: 50px 40px;
+      position: relative;
+      flex-direction: column;
+      padding: 30px 35px 15px;
+      z-index: 1;
+      > a {
+        font-size: 16px;
+        color: @black;
+        margin-bottom: 25px;
+        margin-left: 5em;
+        padding-right: 250px;
+      }
+      p {
         line-height: 1.5;
-        font-weight: @normal;
-        flex-wrap: wrap;
-        font-size: 14px;
+      }
     }
-    &-header {
-        font-weight: @bold;
-        font-size: 18px;
-        padding-right: 33%;
-        padding-bottom: 20px;
-        min-height: 120px;
+    &-slider {
+      padding-bottom: 40px;
+      font-weight: @light;
+      &-wrapper {
+        position: absolute;
+        right: -35px;
+        bottom: -50px;
+        flex-direction: column;
+        z-index: 10;
+        width: 300px;
+        height: 190px;
+        background: @black-70;
+        color: @white;
+        p {
+          font-size: 20px;
+          justify-content: center;
+          margin-top: 0.75em;
+          margin-bottom: 0.5em;
+        }
+      }
+      p {
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.42;
+        align-content: center;
+        height: auto;
+        margin: auto 0;
+      }
+      .gt-slider {
+        &-container {
+          height: 130px;
+        }
+        &-inner {
+          height: 100%;
+          overflow: hidden;
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+        &-arrow {
+          background-color: transparent;
+          top: 40px;
+          &.left {
+            left: -5px;
+          }
+          &.right {
+            right: 0px;
+          }
+        }
+      }
+    }
+    &-number {
+      @size: 90px;
+      background: @black-70;
+      color: @white;
+      height: @size;
+      width: @size;
+      position: absolute;
+      left: 0;
+      bottom: -40px;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      font-weight: @bold;
     }
     &-read-more {
-        position: absolute;
-        left: 0;
+      padding-top: 0.5em;
+      justify-content: flex-end;
+    }
+  }
+  &-text {
+    position: absolute;
+    top: 10px;
+    width: 33%;
+    height: ~"calc(100% - 50px)";
+    flex-direction: column;
+    padding: 50px 40px;
+    line-height: 1.5;
+    font-weight: @normal;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+  &-header {
+    font-weight: @bold;
+    font-size: 18px;
+    padding-right: 33%;
+    padding-bottom: 20px;
+    min-height: 120px;
+  }
+  &-read-more {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 50px;
+  }
+  &-grey {
+    position: relative;
+    .gt-img-holder-abs,
+    .gt-img-holder {
+      margin-top: 50px;
+      height: 550px;
+    }
+    &-text {
+      left: 0;
+      background-color: @black-70;
+      color: @white;
+      font-weight: @light;
+    }
+    &:before {
+      content: url("../images/icons/logo-link-icon.svg");
+      position: absolute;
+      top: -120px;
+      right: 0;
+      width: 250px;
+      height: auto;
+      opacity: 0.5;
+    }
+  }
+  &-white {
+    position: relative;
+    .gt-img-holder-abs,
+    .gt-img-holder {
+      margin-top: 40px;
+      height: 515px;
+      width: 67%;
+    }
+    &-text {
+      right: 0;
+      background-color: @white;
+      color: @grey-main;
+      .gt-box-shadow(7px, 7px, 15px, 0.03);
+      p{
+          &:first-of-type{
+              color:@black;
+          }
+      }
+    }
+    &:before {
+      content: "GOtoTRIP";
+      color: @grey-lightest;
+      font-size: 190px;
+      font-weight: @bold;
+      position: absolute;
+      top: -100px;
+      left: -5px; //width: 250px;
+      //height: auto;
+      opacity: 0.5;
+    }
+  }
+  &-before-logo {
+    position: relative;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .gt-collection {
+    &-wrapper.container {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    &-link {
+      width: ~"calc(100% - 70px)";
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  .gt-collection {
+    &-link {
+      width: 100%;
+      &-img {
+        height: 450px;
+      }
+      &-text {
+        > a {
+          margin-left: 1em;
+          padding-right: 0;
+        }
+      }
+      &-slider {
+        &-wrapper {
+          right: 0;
+          bottom: 0;
+        }
+      }
+      &-number {
         bottom: 0;
+      }
+    }
+    &-text {
+      position: static;
+      top: auto;
+      width: 100%;
+      height: auto;
+      padding: 30px 30px;
+    }
+    &-header {
+      padding-right: 0;
+      min-height: 0;
+    }
+    &-read-more {
+      position: static;
+      padding: 30px 0 0;
+    }
+    &-grey,
+    &-white {
+      .gt-img-holder-abs,
+      .gt-img-holder {
+        margin-top: 20px;
+        height: 450px;
         width: 100%;
-        padding-left: 40px;
-        padding-right: 40px;
-        padding-bottom: 50px;
+      }
     }
     &-grey {
-        position: relative;
-        .gt-img-holder-abs,
-        .gt-img-holder {
-            margin-top: 50px;
-            height: 550px;
-        }
-        &-text {
-            left: 0;
-            background-color: @black-70;
-            color: @white;
-            font-weight: @light;
-        }
-        &:before {
-            content: url("../images/icons/logo-link-icon.svg");
-            position: absolute;
-            top: -120px;
-            right: 0;
-            width: 250px;
-            height: auto;
-            opacity: 0.5;
-        }
+      &:before {
+        top: -120px;
+        width: 170px;
+      }
+      .gt-collection-read-more {
+        justify-content: flex-end;
+      }
     }
     &-white {
-        position: relative;
-        .gt-img-holder-abs,
-        .gt-img-holder {
-            margin-top: 40px;
-            height: 515px;
-            width: 67%;
-        }
-        &-text {
-            right: 0;
-            background-color: @white;
-            color: @grey-dark;
-            .gt-box-shadow(7px,
-            7px,
-            15px,
-            0.03);
-        }
-        &:before {
-            content: "GOtoTRIP";
-            color: @grey-lightest;
-            font-size: 190px;
-            font-weight: @bold;
-            position: absolute;
-            top: -100px;
-            left: -5px; //width: 250px;
-            //height: auto;
-            opacity: 0.5;
-        }
+      &:before {
+        font-size: 100px;
+      }
     }
-    &-before-logo {
-        position: relative;
-    }
+  }
 }
-
-@media screen and (max-width: 1230px) {
-    .gt-collection {
-        &-wrapper.container {
-            padding-left: 30px;
-            padding-right: 30px;
-        }
-        &-link {
-            width: ~"calc(100% - 70px)";
-        }
-    }
-}
-
-@media screen and (max-width: 1023px) {
-    .gt-collection {
-        &-link {
-            width: 100%;
-            &-img {
-                height: 450px;
-            }
-            &-text {
-                >a {
-                    margin-left: 1em;
-                    padding-right: 0;
-                }
-            }
-            &-slider {
-                &-wrapper {
-                    right: 0;
-                    bottom: 0;
-                }
-            }
-            &-number {
-                bottom: 0;
-            }
-        }
-        &-text {
-            position: static;
-            top: auto;
-            width: 100%;
-            height: auto;
-            padding: 30px 30px;
-        }
-        &-header {
-            padding-right: 0;
-            min-height: 0;
-        }
-        &-read-more {
-            position: static;
-            padding: 30px 0 0;
-        }
-        &-grey,
-        &-white {
-            .gt-img-holder-abs,
-            .gt-img-holder {
-                margin-top: 20px;
-                height: 450px;
-                width: 100%;
-            }
-        }
-        &-grey {
-            &:before {
-                top: -120px;
-                width: 170px;
-            }
-            .gt-collection-read-more {
-                justify-content: flex-end;
-            }
-        }
-        &-white {
-            &:before {
-                font-size: 100px;
-            }
-        }
-    }
-}
-
 @media screen and (max-width: 767px) {
-    .gt-collection {
-        &-link {
-            &-img {
-                height: 450px;
-            }
-            &-text {
-                >a {
-                    margin-left: 1em;
-                    padding-right: 0;
-                }
-            }
-            &-slider {
-                &-wrapper {
-                    display: none;
-                }
-            }
-            &-number {
-                @size: 60px;
-                height: @size;
-                width: @size;
-                font-size: 36px;
-            }
+  .gt-collection {
+    &-link {
+      &-img {
+        height: 450px;
+      }
+      &-text {
+        > a {
+          margin-left: 1em;
+          padding-right: 0;
         }
-        &-wrapper.container {
-            padding-left: 24px;
-            padding-right: 24px;
+      }
+      &-slider {
+        &-wrapper {
+          display: none;
         }
-        &-text {
-            padding: 24px 24px;
-        }
-        &-grey,
-        &-white {
-            .gt-img-holder-abs,
-            .gt-img-holder {
-                margin-top: 0px;
-                height: 380px;
-            }
-        }
-        &-grey {
-            &:before {
-                top: -100px;
-                width: 120px;
-            }
-        }
-        &-white {
-            &:before {
-                font-size: 60px;
-                top: -60px;
-            }
-        }
+      }
+      &-number {
+        @size: 60px;
+        height: @size;
+        width: @size;
+        font-size: 36px;
+      }
     }
+    &-wrapper.container {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    &-text {
+      padding: 24px 24px;
+    }
+    &-grey,
+    &-white {
+      .gt-img-holder-abs,
+      .gt-img-holder {
+        margin-top: 0px;
+        height: 380px;
+      }
+    }
+    &-grey {
+      &:before {
+        top: -100px;
+        width: 120px;
+      }
+    }
+    &-white {
+      &:before {
+        font-size: 60px;
+        top: -60px;
+      }
+    }
+  }
 }
-
 @media screen and (max-width: 479px) {
-    .gt-collection {
-        &-wrapper.container {
-            padding-left: 0;
-            padding-right: 0;
-        }
-        &-text {
-            padding: 15px 15px 24px;
-        }
+  .gt-collection {
+    &-wrapper.container {
+      padding-left: 0;
+      padding-right: 0;
     }
+    &-text {
+      padding: 15px 15px 24px;
+    }
+  }
 }

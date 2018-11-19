@@ -26,7 +26,7 @@ this.moveTouchMenu = function(el){
    
 }
 
-if ($("ul").is(".gt-menu-news")) {
+if ($("ul").is(".gt-menu-news")) { 
   self.manageTouchMenu($(".gt-menu-news"));
 }
 

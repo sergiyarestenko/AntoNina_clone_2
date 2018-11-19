@@ -354,6 +354,9 @@
         data-src-tablet="desert-top-1024.png"
         data-src-phone="desert-top-600.png"
 >
+
+<div class="gt-shadow gt-shadow-70 gt-shadow-70-reverse-100px-both"></div>
+
 <div class ="container">
         <!--src/templates/breadcrumbs/partnership-page.html START-->
         <div class="gt-breadcrumbs">
@@ -477,27 +480,20 @@
             
             <!--src/templates/column_page/_article-full.html END-->
             <!-- // -->
-            <div class="gt-video gt-video-high gt-margin" data-youtube="W0LHTWG-UmQ">
-                <div class="gt-video-inner gt-video-width">
-                    <div class="gt-video-img">
-                        <div class="gt-img-holder ">
-                            <img
-                                    class="lazy"
-                                    src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                                    data-src= "../images/video-bg.png"
-                                    alt="abs"
-                            >
-                        </div>
-                    </div>
-                </div>
-            
-                <span class="gt-video-switch"></span>
-                <span class="gt-video-play"></span>
-                <span class="gt-video-pause"></span>
-                <span class="gt-video-uncover"></span>
+            <div class="gt-video gt-video-high gt-margin">
+              <div class="gt-video-inner">
+                <iframe
+                  frameborder="0"
+                  border="0"
+                  cellspacing="0"
+                  style="border-style: none;width: 100%; height: 100%;"
+                  src="https://www.youtube.com/embed/kFr8SdOS5ic"
+                >
+                </iframe>
+              </div>
             </div>
             <div class="gt-video-after gt-margin">
-                <p>Тестовое название видео</p>
+                <a href="https://www.youtube.com/watch?time_continue=1&v=kFr8SdOS5ic">Испания по-русски</a>
             </div>
             <!-- // -->
             <div class="gt-share gt-margin ">
@@ -918,6 +914,7 @@
 </div>
 
 <script type="text/javascript" src="./javascripts/jquery-3.2.1.min.js"></script>
+<script src="./javascripts/jquery-ui.min.js"></script>
 <script src="./javascripts/jquery.lazyload.min.js"></script>
 <script src="./javascripts/jquery.nicescroll.min.js"></script>
 <script src="./javascripts/mediaelement-and-player.min.js"></script>
