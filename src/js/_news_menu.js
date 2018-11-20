@@ -1,35 +1,75 @@
 this.manageTouchMenu = function(el) {
-    var leftArrow = $('#gt-menu-news-left'),
-        rightArrow = $('#gt-menu-news-right'),
-        leftInterval,
-        rightInterval;
+  console.log("manageTouchMenu", el);
 
+  var leftArrow = $("#gt-menu-news-left"),
+    rightArrow = $("#gt-menu-news-right"),
+    isTouch = true,
+    leftInterval,
+    rightInterval,
+    menuWidth = $(el).outerWidth(),
+    lastPosition = findLastPosition(),
+    startPosition = $(el).offset(),
+    menuCurrPosition = startPosition;
 
-    leftArrow.on('mousedown',function(){
-        if (!self.isTablet()) {
-          return;
-        }
+  console.log(lastPosition);
 
-    })
+  function findLastPosition() {
+    var parentWidth = $(el)
+      .parent()
+      .outerWidth();
 
-    rightArrow.on("mousedown", function() {
-      if (!self.isTablet()) {
-        return;
-      }
-    });
+    return parentWidth - menuWidth;
+  }
 
+  if ($(leftArrow).is(":visible")) {
+    isTouch = false;
+  }
+
+  leftArrow.on("mousedown", function() {
+    if (!self.isTablet()) {
+      return;
+    }
+
+    moveToleft();
+  });
+
+  rightArrow.on("mousedown", function() {
+    if (!self.isTablet()) {
+      return;
+    }
+    moveToRight();
+  });
+
+  function moveToRight() {
+    console.log("moveToRight");
+
+    menuCurrPosition += 1;
+
+    moveMenu();
+  }
+
+  function moveToleft() {
+    console.log("moveToleft");
+
+    menuCurrPosition -= 1;
+
+    moveMenu();
+  }
+
+  function moveMenu() {
+    $(el).offset({ left: menuCurrPosition });
+  }
 };
 
+this.moveTouchMenuLeft = function(el) {};
 
+this.touchMenuRight = function(el) {};
 
-this.moveTouchMenu = function(el){
-   
-}
+this.moveTouchMenu = function(el) {};
 
-if ($("ul").is(".gt-menu-news")) { 
+if ($("*").is(".gt-menu-news")) {
   self.manageTouchMenu($(".gt-menu-news"));
 }
-
 
 // function notMobileMenuSwitcher() {
 //     var $emMobileTopMenuLeft = $('#em-mobile-top-menu-wrapper-left'),
@@ -72,10 +112,6 @@ if ($("ul").is(".gt-menu-news")) {
 //         clearInterval(emRightInterval);
 //     });
 // }
-
-
-
-
 
 // function switchOnMobileTopMenu() {
 //     var startPos = 0,

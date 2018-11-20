@@ -38,6 +38,6 @@ var GoToTrip = function () {
                            };
 
         var goToTrip = new GoToTrip();
-        console.log('15.11.2018 app.js');
+        console.log('20.11.2018 app.js');
 
     
