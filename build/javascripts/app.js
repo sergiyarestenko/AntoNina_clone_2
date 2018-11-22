@@ -1,5 +1,3 @@
-
-
 var GoToTrip = function () {
                              /*! jQuery UI - v1.12.1 - 2018-09-27
                              * http://jqueryui.com
@@ -226,6 +224,7 @@ var GoToTrip = function () {
                              };
                              
                              this.setImgWidthHeightClass = function (el) {
+                                 console.log("setImgWidthHeightClass");
                              
                                  var img = el.find('img');
                                  $(img).removeClass("gt-width");
@@ -244,6 +243,8 @@ var GoToTrip = function () {
                              };
                              
                              this.updateImgHolder = function(){
+                             
+                             
                                  if ($("*").is(".gt-img-holder")) {
                                      $(".gt-img-holder").each(function () {
                                          self.imgLazyLoadFunc($(this));
@@ -261,39 +262,39 @@ var GoToTrip = function () {
                              
                              
                              
-                             // if ($("div").is(".gt-img-holder")) {
-                             //     $(".gt-img-holder ").each(function () {
-                             //         self.imgLazyLoadFunc($(this));
-                             //     });
+                             if ($("div").is(".gt-img-holder")) {
+                                 $(".gt-img-holder ").each(function () {
+                                     self.imgLazyLoadFunc($(this));
+                                 });
                              
-                             //     docWindow.resize(function () {
-                             //         var resizeTimer;
-                             //         clearTimeout(resizeTimer);
-                             //         resizeTimer = setTimeout(function () {
+                                 docWindow.resize(function () {
+                                     var resizeTimer;
+                                     clearTimeout(resizeTimer);
+                                     resizeTimer = setTimeout(function () {
                              
-                             //             $(".gt-img-holder ").each(function () {
-                             //                 self.setImgWidthHeightClass($(this));
-                             //             });
+                                         $(".gt-img-holder ").each(function () {
+                                             self.setImgWidthHeightClass($(this));
+                                         });
                              
-                             //         }, 66);
-                             //     });
-                             // }
-                             // if ($("div").is(".gt-img-holder-abs")) {
-                             //     $(".gt-img-holder-abs").each(function () {
-                             //         self.imgLazyLoadFunc($(this));
-                             //     });
+                                     }, 66);
+                                 });
+                             }
+                             if ($("div").is(".gt-img-holder-abs")) {
+                                 $(".gt-img-holder-abs").each(function () {
+                                     self.imgLazyLoadFunc($(this));
+                                 });
                              
-                             //     docWindow.resize(function () {
-                             //         var resizeTimer;
-                             //         clearTimeout(resizeTimer);
-                             //         resizeTimer = setTimeout(function () {
+                                 docWindow.resize(function () {
+                                     var resizeTimer;
+                                     clearTimeout(resizeTimer);
+                                     resizeTimer = setTimeout(function () {
                              
-                             //             $(".gt-img-holder-abs").each(function () {
-                             //                 self.setImgWidthHeightClass($(this));
-                             //             });
-                             //         }, 66);
-                             //     });
-                             // }
+                                         $(".gt-img-holder-abs").each(function () {
+                                             self.setImgWidthHeightClass($(this));
+                                         });
+                                     }, 66);
+                                 });
+                             }
                              
                              // ---img-holder//\\--- bg-holder \\\///
                              
@@ -319,7 +320,7 @@ var GoToTrip = function () {
                                          bg = el.attr("data-src-desctop");
                                          currToken = 2;
                                      }
-                                     el.css("background-image", "url('../images/bgs/" + bg + "')");
+                                     el.css("background-image", "url('" + bg + "')");
                                  }
                                  docWindow.resize(function () {
                                      clearTimeout(resizeTimer);
@@ -806,7 +807,7 @@ var GoToTrip = function () {
                              
                                menuParent.bind("touchmove", function(event) {
                                  var e = event.originalEvent,
-                                   moving = (e.touches[0].pageX - touchStartPosition)*.05;
+                                   moving = (e.touches[0].pageX - touchStartPosition)*.5;
                              
                              
                                  menuCurrPosition  += moving;
@@ -1629,7 +1630,7 @@ var GoToTrip = function () {
                                  resizeTimer = setTimeout(function () {
                              
                                      self.deskTopMenuScroll();
-                                     self.updateImgHolder();
+                                     // self.updateImgHolder();
                              
                                      if (gtHeader.hasClass("gt-open")) self.mobileMenuClose();
                              
@@ -1646,7 +1647,6 @@ var GoToTrip = function () {
                              
                              this.updatePage = function () {
                                  self.updateImgHolder();
-                             console.log('update')
                              }
                              
                              
@@ -1654,7 +1654,7 @@ var GoToTrip = function () {
                              // loadFunction
                              
                              
-                             self.updateImgHolder();
+                             // self.updateImgHolder();
                              this.pageUp = function () {
                                  $('html, body').animate({scrollTop: 0}, 800);
                                  return false;

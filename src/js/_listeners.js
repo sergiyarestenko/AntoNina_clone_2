@@ -5,7 +5,7 @@ docWindow.resize(function () {
     resizeTimer = setTimeout(function () {
 
         self.deskTopMenuScroll();
-        self.updateImgHolder();
+        // self.updateImgHolder();
 
         if (gtHeader.hasClass("gt-open")) self.mobileMenuClose();
 
@@ -22,7 +22,6 @@ docWindow.resize(function () {
 
 this.updatePage = function () {
     self.updateImgHolder();
-console.log('update')
 }
 
 
@@ -30,5 +29,5 @@ console.log('update')
 // loadFunction
 
 
-self.updateImgHolder();
+// self.updateImgHolder();
 

@@ -102,7 +102,6 @@
     &-user {
         position: absolute;
         top: 100%;
-        margin-top: 1px;
         right: @search-width;
         max-height: 0;
         overflow: hidden;
@@ -256,6 +255,7 @@
                 font-size: 12px;
                 button {
                     height: 100%;
+                    min-width: 150px;
                 }
             }
             &>p {
@@ -330,6 +330,7 @@
         }
     }
     &.gt-user-open {
+         background: @black-70;
         .gt-header {
             &-user {
                 max-height: 100vh; // overflow: auto;

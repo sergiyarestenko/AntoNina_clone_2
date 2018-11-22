@@ -1,5 +1,3 @@
-
-
 var GoToTrip = function () {
                              //= jquery-ui
                              //= ./_vars

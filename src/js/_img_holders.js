@@ -15,6 +15,7 @@ this.imgLazyLoadFunc = function (el) {
 };
 
 this.setImgWidthHeightClass = function (el) {
+    console.log("setImgWidthHeightClass");
 
     var img = el.find('img');
     $(img).removeClass("gt-width");
@@ -33,6 +34,8 @@ this.setImgWidthHeightClass = function (el) {
 };
 
 this.updateImgHolder = function(){
+
+
     if ($("*").is(".gt-img-holder")) {
         $(".gt-img-holder").each(function () {
             self.imgLazyLoadFunc($(this));
@@ -50,39 +53,39 @@ this.updateImgHolder = function(){
 
 
 
-// if ($("div").is(".gt-img-holder")) {
-//     $(".gt-img-holder ").each(function () {
-//         self.imgLazyLoadFunc($(this));
-//     });
+if ($("div").is(".gt-img-holder")) {
+    $(".gt-img-holder ").each(function () {
+        self.imgLazyLoadFunc($(this));
+    });
 
-//     docWindow.resize(function () {
-//         var resizeTimer;
-//         clearTimeout(resizeTimer);
-//         resizeTimer = setTimeout(function () {
+    docWindow.resize(function () {
+        var resizeTimer;
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
 
-//             $(".gt-img-holder ").each(function () {
-//                 self.setImgWidthHeightClass($(this));
-//             });
+            $(".gt-img-holder ").each(function () {
+                self.setImgWidthHeightClass($(this));
+            });
 
-//         }, 66);
-//     });
-// }
-// if ($("div").is(".gt-img-holder-abs")) {
-//     $(".gt-img-holder-abs").each(function () {
-//         self.imgLazyLoadFunc($(this));
-//     });
+        }, 66);
+    });
+}
+if ($("div").is(".gt-img-holder-abs")) {
+    $(".gt-img-holder-abs").each(function () {
+        self.imgLazyLoadFunc($(this));
+    });
 
-//     docWindow.resize(function () {
-//         var resizeTimer;
-//         clearTimeout(resizeTimer);
-//         resizeTimer = setTimeout(function () {
+    docWindow.resize(function () {
+        var resizeTimer;
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
 
-//             $(".gt-img-holder-abs").each(function () {
-//                 self.setImgWidthHeightClass($(this));
-//             });
-//         }, 66);
-//     });
-// }
+            $(".gt-img-holder-abs").each(function () {
+                self.setImgWidthHeightClass($(this));
+            });
+        }, 66);
+    });
+}
 
 // ---img-holder//\\--- bg-holder \\\///
 
@@ -108,7 +111,7 @@ this.setBg = function (el) {
             bg = el.attr("data-src-desctop");
             currToken = 2;
         }
-        el.css("background-image", "url('../images/bgs/" + bg + "')");
+        el.css("background-image", "url('" + bg + "')");
     }
     docWindow.resize(function () {
         clearTimeout(resizeTimer);

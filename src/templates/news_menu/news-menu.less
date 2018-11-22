@@ -6,7 +6,6 @@
     flex-direction: row;
     position: relative;
     overflow: hidden;
-    .test();
   }
   flex-direction: row;
   flex-grow: 1;
@@ -66,6 +65,16 @@
     li{
       flex-shrink: 0;
       margin-right: 15px;
+      background: @blue;
+      height: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 20px;
+      color: @white;
+      align-items: center;
+      a{
+        color: inherit;
+      }
     }
     &-arrow {
       opacity: 1;
@@ -79,7 +88,6 @@
       background-repeat: no-repeat;
       background-size: contain;
       cursor: pointer;
-      .test();
       &.left {
         background-image: url("../images/icons/arrow-left-blue.svg");
         left: 0;
