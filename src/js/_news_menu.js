@@ -81,7 +81,7 @@ this.manageTouchMenu = function(el) {
 
   menuParent.bind("touchmove", function(event) {
     var e = event.originalEvent,
-      moving = (e.touches[0].pageX - touchStartPosition)*.5;
+      moving = (e.touches[0].pageX - touchStartPosition);
 
 
     menuCurrPosition  += moving;
