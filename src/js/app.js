@@ -36,6 +36,3 @@ var GoToTrip = function () {
                            };
 
         var goToTrip = new GoToTrip();
-        console.log('21.11.2018 app.js');
-
-    

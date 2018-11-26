@@ -4,12 +4,14 @@ docWindow.resize(function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
 
+
+
+        $(docWindow).trigger("customresize");
+
         self.deskTopMenuScroll();
         // self.updateImgHolder();
 
         if (gtHeader.hasClass("gt-open")) self.mobileMenuClose();
-
-
 
         self.footerHeight();
 

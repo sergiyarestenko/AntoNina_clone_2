@@ -15,7 +15,5 @@ upButton.on("click", self.pageUp);
 
 docWindow.scroll(function () {
     self.upPageButton();//_up_button.js
-    if ($(".gt-header-menu").is(":visible")) {
-        self.deskTopMenuScroll();
-    }
+  
 });

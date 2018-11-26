@@ -359,6 +359,7 @@
 @media screen and (max-width: 1023px) {
     .gt-header {
         background: @black-70; ////////
+        position: absolute;
         &-menu,
         &-user {
             margin-right: 0;
@@ -434,7 +435,13 @@
         &-switcher {
             display: flex;
         }
+
+        &.gt-scrolled{
+            position: fixed;
+            top:@header-height *-1;
+        }
         &.gt-open {
+            position: fixed;
             height: 100%;
             min-height: 100vh; //////////
             .gt-header {

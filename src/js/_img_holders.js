@@ -15,7 +15,6 @@ this.imgLazyLoadFunc = function (el) {
 };
 
 this.setImgWidthHeightClass = function (el) {
-    console.log("setImgWidthHeightClass");
 
     var img = el.find('img');
     $(img).removeClass("gt-width");
