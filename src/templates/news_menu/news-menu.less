@@ -6,6 +6,15 @@
     flex-direction: row;
     position: relative;
     overflow: hidden;
+    background: @body-bg;
+    z-index: 5;
+
+    .gt-transition();
+    &.gt-fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
   }
   flex-direction: row;
   flex-grow: 1;
@@ -46,7 +55,6 @@
   }
   &-arrow {
     position: absolute;
-    top: 0;
     height: 0;
     width: 0;
     z-index: -1;
@@ -62,7 +70,13 @@
   .gt-menu-news {
     justify-content: flex-start;
     width: auto;
-    li{
+    &-wrapper {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    li {
       flex-shrink: 0;
       margin-right: 15px;
       background: @blue;
@@ -72,14 +86,14 @@
       border-radius: 20px;
       color: @white;
       align-items: center;
-      a{
+      a {
         color: inherit;
       }
     }
     &-arrow {
       opacity: 1;
       position: absolute;
-      top: 0;
+      top: 30px;
       height: 40px;
       width: 40px;
       background: @body-bg;

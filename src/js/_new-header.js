@@ -15,20 +15,14 @@ this.deskTopMenuScroll = function() {
 
       if (NextScroll > CurrentScroll) {
         headerCurrTop = headerHeight * -1;
-
-
-        console.log("down", headerCurrTop);
       } else {
         headerCurrTop = 0;
-        console.log("top", headerCurrTop);
       }
-
       CurrentScroll = NextScroll;
       moveHeader();
     }
   });
 
-  function returnHeaderPosition() {}
 
   function moveHeader() {
     $(gtHeader).css("top", headerCurrTop + "px");

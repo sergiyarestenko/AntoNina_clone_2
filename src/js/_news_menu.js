@@ -85,19 +85,33 @@ this.manageTouchMenu = function(el) {
     e.preventDefault();
   });
 
-  $(docWindow).on('customresize',function(){
+  self.fixMenuNewsPosition(el); //onload
+
+  $(docWindow).on("customresize", function() {
     menuCurrPosition = startPosition;
     moveMenu();
-  })
+    self.fixMenuNewsPosition(el);
+  });
 
-
-
-
+  $(docWindow).on("scroll", function() {
+    if (!self.isTablet()) {
+      return;
+    }
+    self.fixMenuNewsPosition(el);
+  });
 };
 
-
-
-
+this.fixMenuNewsPosition = function(el) {
+  if (self.isTablet() && docWindow.scrollTop() > $(".gt-top").outerHeight()) {
+    $(el)
+      .parent()
+      .addClass("gt-fixed");
+  } else {
+    $(el)
+      .parent()
+      .removeClass("gt-fixed");
+  }
+};
 
 if ($("*").is(".gt-menu-news")) {
   self.manageTouchMenu($(".gt-menu-news"));

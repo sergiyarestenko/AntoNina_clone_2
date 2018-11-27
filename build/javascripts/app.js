@@ -113,20 +113,14 @@ var GoToTrip = function () {
                              
                                    if (NextScroll > CurrentScroll) {
                                      headerCurrTop = headerHeight * -1;
-                             
-                             
-                                     console.log("down", headerCurrTop);
                                    } else {
                                      headerCurrTop = 0;
-                                     console.log("top", headerCurrTop);
                                    }
-                             
                                    CurrentScroll = NextScroll;
                                    moveHeader();
                                  }
                                });
                              
-                               function returnHeaderPosition() {}
                              
                                function moveHeader() {
                                  $(gtHeader).css("top", headerCurrTop + "px");
@@ -832,19 +826,33 @@ var GoToTrip = function () {
                                  e.preventDefault();
                                });
                              
-                               $(docWindow).on('customresize',function(){
+                               self.fixMenuNewsPosition(el); //onload
+                             
+                               $(docWindow).on("customresize", function() {
                                  menuCurrPosition = startPosition;
                                  moveMenu();
-                               })
+                                 self.fixMenuNewsPosition(el);
+                               });
                              
-                             
-                             
-                             
+                               $(docWindow).on("scroll", function() {
+                                 if (!self.isTablet()) {
+                                   return;
+                                 }
+                                 self.fixMenuNewsPosition(el);
+                               });
                              };
                              
-                             
-                             
-                             
+                             this.fixMenuNewsPosition = function(el) {
+                               if (self.isTablet() && docWindow.scrollTop() > $(".gt-top").outerHeight()) {
+                                 $(el)
+                                   .parent()
+                                   .addClass("gt-fixed");
+                               } else {
+                                 $(el)
+                                   .parent()
+                                   .removeClass("gt-fixed");
+                               }
+                             };
                              
                              if ($("*").is(".gt-menu-news")) {
                                self.manageTouchMenu($(".gt-menu-news"));
@@ -1172,10 +1180,10 @@ var GoToTrip = function () {
                                              $(this).removeClass('not-valid');
                                          })
                                      })
-                                 $('#gt-enter-form-submit').on('click', function (e) {
-                                     e.preventDefault();
-                                     alert('в этом месте я я ожидаю, что ты пошлешь ajax. В случае некорректного ввода присвой класс "not-valid" нужному диву класса gt-input-wrapper-validator');
-                                 })
+                                 // $('#gt-enter-form-submit').on('click', function (e) {
+                                 //     e.preventDefault();
+                                 //     alert('в этом месте я я ожидаю, что ты пошлешь ajax. В случае некорректного ввода присвой класс "not-valid" нужному диву класса gt-input-wrapper-validator');
+                                 // })
                              }
                              
                              this.submitRegForm = function () {
@@ -1590,6 +1598,8 @@ var GoToTrip = function () {
                                  alert("Вход через " + token)
                              
                              };
+                             /*
+                             
                              this.cutNews = function (el) {
                                  var parent = el.parent(),
                                      maxHeight = parent.height(),
@@ -1628,18 +1638,53 @@ var GoToTrip = function () {
                                  //     }
                                  // }
                              };
+                             
+                             */
+                             
+                             this.cutNews = function(el) {
+                               var elHeight = $(el).height(),
+                                 text = $(el).children(),
+                                 currText,
+                                 textLength = text.length,
+                                 sumHeight = 0;
+                             
+                                 for (var i = 0; i < textLength; i++){
+                                     currText = text[i];
+                                     $(currText).addClass('test');
+                                     // debugger;
+                                     if (elHeight < $(currText).outerHeight()){
+                                         cutText(currText, elHeight);
+                                        break;
+                                     }else{
+                                         elHeight = elHeight - $(currText).outerHeight();
+                                     }
+                                 }
+                             
+                             function cutText(el,height){
+                                 while ($(el).outerHeight() > height) {
+                                           $(el).text($(el).text().split(" ").slice(0, $(el).text().split(" ").length - 1).join(" ") + "...");
+                             
+                                 }
+                             
+                             }
+                              
+                               //     var $title = $(el).find("p");
+                             
+                               //     while ($title.height() > $(el).height()) {
+                               //         $title.text($title.text().split(" ").slice(0, $title.text().split(" ").length - 1).join(" ") + "...");
+                               //     }
+                             };
+                             
                              if ($("div").is(".js-news-cut")) {
-                                 $(".js-news-cut").each(function () {
-                                     self.cutNews($(this));
-                                 });
-                                
+                               $(".js-news-cut").each(function() {
+                                 self.cutNews($(this));
+                               });
                              }
                              
-                             
                              if ($("div").is(".gt-read-more-slider-text-inner")) {
-                                 $('.gt-read-more-slider-text-inner').each(function () {
-                                     self.cutNews($(this));
-                                 })
+                               $(".gt-read-more-slider-text-inner").each(function() {
+                                 self.cutNews($(this));
+                               });
                              }
                              ///////////////////////////////
                              body.on('click', function (e) {
@@ -1658,8 +1703,6 @@ var GoToTrip = function () {
                                  var resizeTimer;
                                  clearTimeout(resizeTimer);
                                  resizeTimer = setTimeout(function () {
-                             
-                             
                              
                                      $(docWindow).trigger("customresize");
                              

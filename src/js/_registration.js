@@ -6,10 +6,10 @@ this.submitEnterForm = function () {
                 $(this).removeClass('not-valid');
             })
         })
-    $('#gt-enter-form-submit').on('click', function (e) {
-        e.preventDefault();
-        alert('в этом месте я я ожидаю, что ты пошлешь ajax. В случае некорректного ввода присвой класс "not-valid" нужному диву класса gt-input-wrapper-validator');
-    })
+    // $('#gt-enter-form-submit').on('click', function (e) {
+    //     e.preventDefault();
+    //     alert('в этом месте я я ожидаю, что ты пошлешь ajax. В случае некорректного ввода присвой класс "not-valid" нужному диву класса gt-input-wrapper-validator');
+    // })
 }
 
 this.submitRegForm = function () {

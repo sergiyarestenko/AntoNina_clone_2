@@ -4,8 +4,6 @@ docWindow.resize(function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
 
-
-
         $(docWindow).trigger("customresize");
 
         self.deskTopMenuScroll();
