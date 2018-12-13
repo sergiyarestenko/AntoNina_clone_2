@@ -1,6 +1,8 @@
 @import "../../stylesheets/_palette";
 @import "../../stylesheets/_variables";
 @import "../../stylesheets/_mixin";
+
+
 .gt-news {
   height: 100%;
   width: 100%;
@@ -44,6 +46,7 @@
       }
       &-bottom {
         justify-content: flex-end;
+        padding-bottom: 30px;
       }
     }
     &:hover {
@@ -76,7 +79,7 @@
         flex-direction: column;
         font-size: 14px;
         color: @grey-light;
-        line-height: 1.42;
+        line-height: 23px;
       }
       .gt-news-link {
         margin-top: 0.5em;
@@ -88,6 +91,7 @@
       }
       .gt-news-header {
         color: @grey-dark;
+        line-height: 23px;
         margin-top: 0.5em;
       }
     }
@@ -110,12 +114,16 @@
       flex-shrink: 1;
       justify-content: space-between;
       padding-left: 1em;
+      line-height: 16px;
       color: @grey-dark;
+      font-weight: @light;
       .gt-transition-fast();
     }
     &-date {
       margin-top: 0.5em;
-      font-size: 12px;
+      font-size: 10px;
+       line-height: 12px;
+       font-weight: @light;
       color: @grey-light;
       .gt-transition();
     }
@@ -212,7 +220,8 @@
   }
   &-header {
     font-weight: @bold;
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 14px;
     margin-top: 1em;
     &-read-more {
       color: @grey-dark;

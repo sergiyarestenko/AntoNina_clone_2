@@ -392,12 +392,15 @@ footer {
 
 .gt-a-news,
 .gt-a-video {
+  font-weight: @light;
+  font-size: 14px;
+  height: 23px;
   position: relative;
   &:after {
     content: "";
     position: absolute;
     left: 0; //bottom: -2px;
-    top: ~"calc(100% + 0px)";
+    top: ~"calc(100% - 10px)";
     height: 2px;
     width: 100%;
     background: @blue;
